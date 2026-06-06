@@ -1,184 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>YNM GEMS - Natural Gemstone Supplier</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Google Fonts (提升高级感) -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --dark-bg: #0b0b0b;
-            --card-bg: #1c1c1c;
-        }
-        body{ 
-            margin:0; 
-            font-family: 'Inter', Arial, sans-serif; 
-            background: var(--dark-bg); 
-            color:white; 
-        }
-        .hero{ 
-            height:90vh; 
-            display:flex; 
-            flex-direction:column; 
-            justify-content:center; 
-            align-items:center; 
-            text-align:center; 
-            background:url('https://images.unsplash.com/photo-1602524200774-9d0b0b2a0d8a') center/cover fixed; 
-            position:relative; 
-        }
-        .hero::after{ 
-            content:""; 
-            position:absolute; 
-            top:0;left:0; 
-            width:100%;height:100%; 
-            background:rgba(0,0,0,0.6); 
-        }
-        .hero-content{ position:relative; z-index:2; }
-        .hero h1{ 
-            font-family: 'Playfair Display', serif;
-            font-size: 72px; 
-            margin:0; 
-            letter-spacing: 4px;
-            color: var(--gold);
-        }
-        .hero p{ 
-            color:#ddd; 
-            margin:20px 0 30px; 
-            font-size: 18px;
-            max-width: 600px;
-        }
-        .btn{ 
-            padding:14px 35px; 
-            margin:10px; 
-            background:var(--gold); 
-            color:black; 
-            font-weight:bold; 
-            border:none; 
-            border-radius:6px; 
-            text-decoration:none; 
-            display:inline-block; 
-            transition: all 0.3s ease;
-        }
-        .btn:hover { background: white; }
-        .section{ padding:80px 20px; text-align:center; }
-        .section h2{ 
-            font-family: 'Playfair Display', serif;
-            font-size:40px; 
-            margin-bottom:50px; 
-            color: white;
-        }
-        .grid{ display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
-        .card{ 
-            background:var(--card-bg); 
-            padding:15px; 
-            width:260px; 
-            border-radius:10px; 
-            transition:0.3s; 
-            border: 1px solid #333;
-        }
-        .card:hover{ 
-            transform:translateY(-8px); 
-            border-color: var(--gold);
-        }
-        .card img{ 
-            width:100%; 
-            border-radius:8px; 
-            height:180px; 
-            object-fit:cover; 
-        }
-        .card h3 {
-            margin-top: 15px;
-            font-size: 18px;
-            color: #eee;
-        }
-        .features{ display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-        .feature{ 
-            background:#111; 
-            padding:25px; 
-            border-radius:10px; 
-            width:220px; 
-            border: 1px solid #333;
-        }
-        .feature:hover {
-            border-color: var(--gold);
-        }
-        footer{ background:#000; text-align:center; padding:40px; color:#888; }
-        .whatsapp{ 
-            position:fixed; 
-            bottom:20px; 
-            right:20px; 
-            background:#25D366; 
-            color:white; 
-            padding:15px 22px; 
-            border-radius:50px; 
-            text-decoration:none; 
-            font-weight:bold; 
-            z-index: 1000;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>YNM GEMS - Natural Gemstone Supplier</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ===== 全局样式 ===== */
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #0b0b0b;
+    color: white;
+}
+
+/* ===== Logo ===== */
+.site-header {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    z-index: 100;
+}
+
+.site-header img {
+    height: 48px;
+    width: auto;
+}
+
+/* ===== Hero ===== */
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('https://images.unsplash.com/photo-1602524200774-9d0b0b2a0d8a') center/cover;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 60px;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    color: #ccc;
+    margin: 10px 0 20px;
+}
+
+.btn {
+    padding: 12px 25px;
+    margin: 10px;
+    background: gold;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* ===== 产品区 ===== */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: #1c1c1c;
+    padding: 15px;
+    width: 220px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: #2a2a2a;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    height: 160px;
+    object-fit: cover;
+}
+
+/* ===== Features ===== */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.feature {
+    background: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    width: 220px;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: #111;
+    text-align: center;
+    padding: 40px;
+    color: #aaa;
+}
+
+/* ===== WhatsApp ===== */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ===== 手机适配 ===== */
+@media (max-width: 768px) {
+    .site-header {
+        top: 12px;
+        left: 15px;
+    }
+    .site-header img {
+        height: 36px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <div class="hero">
-        <div class="hero-content">
-            <h1>YNM GEMS</h1>
-            <p>Direct Factory Supply for Precision-Cut Natural Gemstones (0.7-5.0mm). Specializing in Sapphire, Tourmaline & Garnet.</p>
-            <a class="btn" href="mailto:sales@ynmgems.com">Get Quote</a>
-            <!-- ✅ 修复 WhatsApp 链接 -->
-            <a class="btn" href="https://wa.me/8613845678901" style="background: #25D366; color: white;">WhatsApp Chat</a>
+<!-- ===== Logo ===== -->
+<div class="site-header">
+    <img src="logo.png" alt="缘你梦 YUANNIMENG">
+</div>
+
+<!-- ===== Hero ===== -->
+<div class="hero">
+    <div class="hero-content">
+        <h1>YNM GEMS</h1>
+        <p>Natural Gemstone Supplier from China</p>
+        <p>Tourmaline · Garnet · Tanzanite · Amethyst · Topaz</p>
+        <p>We are a professional natural gemstone supplier located in Wuzhou, China.</p>
+
+        <a class="btn" href="mailto:sales@ynmgems.com">Get Quote</a>
+        <a class="btn" href="https://wa.me/861234567890">WhatsApp</a>
+    </div>
+</div>
+
+<!-- ===== Products ===== -->
+<div class="section">
+    <h2>Our Gemstones</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1611599537845-1c7b0b2a5b3a">
+            <h3>Tourmaline</h3>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed">
+            <h3>Garnet</h3>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0">
+            <h3>Amethyst</h3>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1617038220319-8c5d6b6d5c1d">
+            <h3>Tanzanite</h3>
         </div>
     </div>
+</div>
 
-    <div class="section">
-        <h2>Featured Gemstones</h2>
-        <div class="grid">
-            <div class="card">
-                <!-- ✅ 修复图片链接 -->
-                <img src="https://images.unsplash.com/photo-1611599537845-1c7b0b2a5b3a?auto=format&fit=crop&w=600&q=80" alt="Tourmaline Gemstone">
-                <h3>Pink Tourmaline</h3>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1617038220319-8c5d6b6d5c1d?auto=format&fit=crop&w=600&q=80" alt="Tanzanite Gemstone">
-                <h3>Tanzanite</h3>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=600&q=80" alt="Amethyst Gemstone">
-                <h3>Amethyst</h3>
-            </div>
-            <div class="card">
-                <!-- ✅ 补充缺失的 Garnet 图片 -->
-                <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=600&q=80" alt="Garnet Gemstone">
-                <h3>Red Garnet</h3>
-            </div>
-        </div>
+<!-- ===== Why Choose Us ===== -->
+<div class="section">
+    <h2>Why Choose Us</h2>
+    <div class="features">
+        <div class="feature">15+ Years Experience</div>
+        <div class="feature">Wuzhou Gemstone Hub</div>
+        <div class="feature">Factory Direct Price</div>
+        <div class="feature">Worldwide Shipping</div>
     </div>
+</div>
 
-    <div class="section">
-        <h2>Why Choose Us</h2>
-        <div class="features">
-            <div class="feature">15+ Years Experience</div>
-            <div class="feature">Wuzhou Gemstone Hub</div>
-            <div class="feature">Factory Direct Price</div>
-            <div class="feature">Worldwide Shipping</div>
-        </div>
-    </div>
+<!-- ===== Contact ===== -->
+<div class="section">
+    <h2>Send Inquiry</h2>
+    <p>Email: kimona99999@gmail.com</p>
+    <p>WhatsApp: +86-18276412661</p>
+</div>
 
-    <div class="section">
-        <h2>Send Inquiry</h2>
-        <p>Email: kimona@gmail.com</p>
-        <p>WhatsApp: +86-182-7641-2661</p>
-    </div>
+<footer>
+    © 2026 YNM GEMS. All Rights Reserved.
+</footer>
 
-    <footer>
-        © 2026 YNM GEMS. All Rights Reserved.
-    </footer>
-
-    <!-- ✅ 修复底部浮动 WhatsApp 按钮 -->
-    <a class="whatsapp" href="https://wa.me/8618276412661" target="_blank">WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/8618276412661">WhatsApp</a>
 
 </body>
 </html>

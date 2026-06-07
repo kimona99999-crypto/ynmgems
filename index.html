@@ -65,12 +65,6 @@
             width: auto;
         }
 
-        /* 商标占位 - 请替换为实际logo.PNG */
-        .logo-placeholder {
-            height: 48px;
-            width: auto;
-        }
-
         .nav-links {
             display: flex;
             gap: 32px;
@@ -80,7 +74,7 @@
         .nav-links a {
             color: #EAEAEA;
             text-decoration: none;
-                font-weight: 500;
+            font-weight: 500;
             transition: color 0.3s;
             font-size: 16px;
             letter-spacing: 0.5px;
@@ -339,7 +333,6 @@
             position: relative;
         }
 
-        /* 宝石精修照片占位 - 实际替换 */
         .gem-image img {
             width: 100%;
             height: 100%;
@@ -648,8 +641,7 @@
 <header>
     <div class="header-inner">
         <div class="logo">
-            <!-- 商标图 - 请替换为实际logo.PNG -->
-            <img src="logo.png" alt="YNM Gems Logo" onerror="this.src='https://placehold.co/200x60?text=YNM+Logo'; this.style.height='48px'">
+            <img src="logo.PNG" alt="YNM Gems Logo" onerror="this.src='https://placehold.co/200x60?text=YNM+Logo'; this.style.height='48px'">
         </div>
         <div class="menu-toggle" id="menuToggle">
             <i class="fas fa-bars"></i>
@@ -665,7 +657,6 @@
 </header>
 
 <main>
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-badge">Precision-Cut · 0.7-5.0mm · Natural</div>
@@ -681,7 +672,6 @@
         </div>
     </section>
 
-    <!-- Trust Bar -->
     <div class="trust-bar">
         <div class="trust-items">
             <span class="trust-item">✦ 15+ Years Experience</span>
@@ -691,7 +681,6 @@
         </div>
     </div>
 
-    <!-- Why Choose Us -->
     <div class="section">
         <div class="container">
             <h2 class="section-title">Why Choose Us</h2>
@@ -704,7 +693,6 @@
         </div>
     </div>
 
-    <!-- Gemstones Product Section -->
     <section id="gemstones" class="section" style="background: #0E0E18;">
         <div class="container">
             <h2 class="section-title">Precision-Cut Gemstones</h2>
@@ -720,7 +708,6 @@
         </div>
     </section>
 
-    <!-- Solutions -->
     <section id="solutions" class="section">
         <div class="container">
             <h2 class="section-title">Solutions for Jewelry Industry</h2>
@@ -732,7 +719,6 @@
         </div>
     </section>
 
-    <!-- Quality & Certification -->
     <section id="quality" class="section" style="background:#0C0C14">
         <div class="container">
             <div class="quality-content">
@@ -749,7 +735,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact-section section">
         <div class="container">
             <div class="contact-wrapper">
@@ -796,21 +781,21 @@
 </div>
 
 <script>
-    // Gemstones Data (0.7-5.0mm round, natural)
+    // Gemstones Data (0.7-5.0mm round, natural) - 图片路径已替换为您的真实文件名
     const gemstones = [
-        { name: "Natural Ruby", size: "0.7-5.0mm", desc: "Vivid red, excellent saturation", category:"red", img:"https://placehold.co/600x400/441111/FFAAAA?text=Ruby" },
-        { name: "Blue Sapphire", size: "0.7-5.0mm", desc: "Cornflower to deep royal blue", category:"blue", img:"https://placehold.co/600x400/113355/88AAFF?text=Blue+Sapphire" },
-        { name: "Pink Sapphire", size: "0.7-5.0mm", desc: "Delicate pink, brilliant cut", category:"red", img:"https://placehold.co/600x400/551133/FFB6C1?text=Pink+Sapphire" },
-        { name: "White Sapphire", size: "0.7-5.0mm", desc: "Colorless, diamond-like sparkle", category:"other", img:"https://placehold.co/600x400/DDDDDD/333333?text=White+Sapphire" },
-        { name: "Tsavorite Garnet", size: "0.7-5.0mm", desc: "Intense green, rare and bright", category:"green", img:"https://placehold.co/600x400/226622/AAFFAA?text=Tsavorite" },
-        { name: "Chrome Tourmaline", size: "0.7-5.0mm", desc: "Deep green, high brilliance", category:"green", img:"https://placehold.co/600x400/227744/AAEECC?text=Tourmaline" },
-        { name: "Amethyst", size: "0.7-5.0mm", desc: "Royal purple, good clarity", category:"other", img:"https://placehold.co/600x400/663399/DDAAFF?text=Amethyst" },
-        { name: "Citrine", size: "0.7-5.0mm", desc: "Golden yellow, sunny tone", category:"other", img:"https://placehold.co/600x400/CC8822/FFDD88?text=Citrine" },
-        { name: "Garnet (Rhodolite)", size: "0.7-5.0mm", desc: "Raspberry red, excellent cut", category:"red", img:"https://placehold.co/600x400/882222/FF9999?text=Garnet" },
-        { name: "Peridot", size: "0.7-5.0mm", desc: "Fresh lime green", category:"green", img:"https://placehold.co/600x400/88AA33/EEFFAA?text=Peridot" },
-        { name: "White Topaz", size: "0.7-5.0mm", desc: "Affordable white brilliance", category:"other", img:"https://placehold.co/600x400/EEEEEE/888888?text=White+Topaz" },
-        { name: "Smoky Quartz", size: "0.7-5.0mm", desc: "Earthy brown, unique lustre", category:"other", img:"https://placehold.co/600x400/886644/DDCCAA?text=Smoky+Quartz" },
-        { name: "Diopside", size: "0.7-5.0mm", desc: "Chrome diopside, vivid green", category:"green", img:"https://placehold.co/600x400/337755/AAFFCC?text=Diopside" }
+        { name: "Natural Ruby", size: "0.7-5.0mm", desc: "Vivid red, excellent saturation", category:"red", img: "ruby.jpg" },
+        { name: "Blue Sapphire", size: "0.7-5.0mm", desc: "Cornflower to deep royal blue", category:"blue", img: "sapphire.PNG" },
+        { name: "Pink Sapphire", size: "0.7-5.0mm", desc: "Delicate pink, brilliant cut", category:"red", img: "pink-sapphire.jpg" },
+        { name: "White Sapphire", size: "0.7-5.0mm", desc: "Colorless, diamond-like sparkle", category:"other", img: "white-sapphire.jpg" },
+        { name: "Tsavorite Garnet", size: "0.7-5.0mm", desc: "Intense green, rare and bright", category:"green", img: "tsavorite.jpg" },
+        { name: "Chrome Tourmaline", size: "0.7-5.0mm", desc: "Deep green, high brilliance", category:"green", img: "tourmaline.jpg" },
+        { name: "Amethyst", size: "0.7-5.0mm", desc: "Royal purple, good clarity", category:"other", img: "amethyst.jpg" },
+        { name: "Citrine", size: "0.7-5.0mm", desc: "Golden yellow, sunny tone", category:"other", img: "citrine.jpg" },
+        { name: "Garnet (Rhodolite)", size: "0.7-5.0mm", desc: "Raspberry red, excellent cut", category:"red", img: "garnet.jpg" },
+        { name: "Peridot", size: "0.7-5.0mm", desc: "Fresh lime green", category:"green", img: "peridot.jpg" },
+        { name: "White Topaz", size: "0.7-5.0mm", desc: "Affordable white brilliance", category:"other", img: "white-topaz.jpg" },
+        { name: "Smoky Quartz", size: "0.7-5.0mm", desc: "Earthy brown, unique lustre", category:"other", img: "smoky-quartz.jpg" },
+        { name: "Diopside", size: "0.7-5.0mm", desc: "Chrome diopside, vivid green", category:"green", img: "diopside.jpg" }
     ];
 
     function renderGems(filter="all") {
@@ -820,7 +805,6 @@
         grid.innerHTML = filtered.map(gem => `
             <div class="gem-card">
                 <div class="gem-image">
-                    <!-- 宝石精修照片占位，请替换为实际高清图片路径，建议命名：Ruby.jpg, Sapphire.jpg 等 -->
                     <img src="${gem.img}" alt="${gem.name} round cut natural gemstone" loading="lazy">
                 </div>
                 <div class="gem-info">
@@ -833,7 +817,6 @@
         `).join('');
     }
 
-    // filter logic
     document.querySelectorAll(".filter-btn").forEach(btn => {
         btn.addEventListener("click", () => {
             document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
@@ -843,23 +826,14 @@
     });
     renderGems();
 
-    // Mobile menu
     document.getElementById("menuToggle").addEventListener("click", () => {
         document.getElementById("navLinks").classList.toggle("active");
     });
-    // 简单表单阻止提交演示（实际需后端）
+
     document.getElementById("inquiryForm").addEventListener("submit", (e) => {
         e.preventDefault();
         alert("Thank you! YNM Gems will reply within 24h. Email: kimona99999@gmail.com");
     });
 </script>
-<!-- 
-    重要说明：
-    1. 商标图片请放置 logo.png 在同目录，或修改src路径。
-    2. 宝石精修照片当前使用彩色占位图。请将真实图片替换 gem-image img 中的src，建议命名规范如：ruby.jpg, sapphire.jpg 等。
-    3. 保留原网站提示文案已用到 Hero 区域：“YNM GEMS Natural Gemstone Supplier from China / We are a professional natural gemstone supplier located in Wuzhou,China.”
-    4. WhatsApp & Email 已按您提供的信息配置。
-    5. 本网站为响应式，符合TOB风格。
--->
 </body>
 </html>

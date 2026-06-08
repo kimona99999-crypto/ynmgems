@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>YNM GEMS | Wholesale Natural Gemstones B2B - Precision Cut 0.7-5.0mm</title>
     
-    <!-- 【解决 image_03bdc6.png 中的问题】在这里引入你的网站标签页图标 Logo -->
+    <!-- 【图标优化】引入你的网站标签页图标 Logo -->
     <link rel="icon" href="logo.PNG" type="image/png">
     
     <meta name="description" content="YNM GEMS – premium B2B supplier of natural gemstones from Wuzhou, China. Precision-cut round stones 0.7-5.0mm. Wholesale, OEM, custom sampling, global shipping. Trusted by Thailand, India, China markets.">
@@ -19,11 +19,12 @@
     <meta property="og:url" content="https://www.ynmgems.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* 【优化：全局丝滑滚动】 */
+        /* 全局丝滑滚动 */
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 90px; /* 防止点击导航跳转时内容被固定的 header 挡住 */
+            scroll-padding-top: 90px;
         }
 
         * {
@@ -37,6 +38,7 @@
             color: #E6E6E6;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
+            top: 0 !important; /* 修复谷歌翻译强行加上的 body top 间距 */
         }
         :root {
             --gold: #D4AF37;
@@ -46,6 +48,18 @@
             --border-glow: 0 0 15px rgba(212, 175, 55, 0.15);
         }
         
+        /* 隐藏谷歌翻译官方自带的丑陋顶部横条 */
+        .skiptranslate, .goog-te-banner-frame {
+            display: none !important;
+        }
+        body {
+            position: static !important;
+        }
+        /* 隐藏原本默认的谷歌翻译组件外观，改用我们自定义的 */
+        #google_translate_element {
+            display: none;
+        }
+
         #particle-canvas {
             position: fixed;
             top: 0;
@@ -92,10 +106,16 @@
             height: 48px;
             filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
         }
+        .nav-right-wrap {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
         .nav-links {
             display: flex;
             gap: 32px;
             list-style: none;
+            align-items: center;
         }
         .nav-links a {
             color: #fff;
@@ -107,7 +127,64 @@
         }
         .nav-links a:hover { color: var(--gold); text-shadow: 0 0 5px var(--gold);}
         
-        /* 移动端菜单按钮样式 */
+        /* 【多语言组件样式】 */
+        .custom-lang-selector {
+            position: relative;
+            display: inline-block;
+        }
+        .lang-selected {
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: var(--gold-light);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.3s;
+        }
+        .lang-selected:hover {
+            background: rgba(212, 175, 55, 0.25);
+            border-color: var(--gold);
+            color: #fff;
+        }
+        .lang-dropdown {
+            position: absolute;
+            top: 110%;
+            right: 0;
+            background: #0d0a14;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            display: none;
+            flex-direction: column;
+            min-width: 120px;
+            overflow: hidden;
+            z-index: 1100;
+        }
+        .lang-dropdown.show {
+            display: flex;
+        }
+        .lang-opt {
+            background: transparent;
+            border: none;
+            color: #ccc;
+            padding: 10px 16px;
+            text-align: left;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 100%;
+        }
+        .lang-opt:hover {
+            background: var(--gold);
+            color: #000;
+            font-weight: 600;
+        }
+
         .menu-toggle {
             display: none;
             font-size: 24px;
@@ -117,6 +194,7 @@
             transition: 0.3s;
         }
         
+        /* 后面是原有的板块样式 */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -126,393 +204,68 @@
             position: relative;
             background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.09) 0%, transparent 70%);
         }
-        .hero-content {
-            max-width: 1000px;
-            padding: 0 20px;
-        }
-        .hero-badge {
-            font-size: 12px;
-            letter-spacing: 4px;
-            color: var(--gold);
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(212,175,55,0.3);
-        }
-        .hero h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 80px;
-            font-weight: 700;
-            line-height: 1.1;
-            background: linear-gradient(135deg, #FFFFFF 30%, var(--gold-light) 70%, var(--gold) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 4px 15px rgba(0,0,0,0.5));
-        }
-        .hero-sub {
-            font-size: 18px;
-            color: #ccc;
-            margin-bottom: 40px;
-            letter-spacing: 0.5px;
-        }
-        .btn-group {
-            display: flex;
-            gap: 24px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .btn-primary, .btn-outline {
-            padding: 14px 36px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .btn-primary {
-            background: var(--gold);
-            color: #0A0A0A;
-            box-shadow: 0 4px 20px rgba(212,175,55,0.4);
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(212,175,55,0.6);
-            background: var(--gold-light);
-        }
-        .btn-outline {
-            border: 1px solid rgba(212,175,55,0.5);
-            color: var(--gold-light);
-            background: rgba(255,255,255,0.02);
-            backdrop-filter: blur(8px);
-        }
-        .btn-outline:hover {
-            border-color: var(--gold);
-            background: rgba(212,175,55,0.12);
-            transform: translateY(-3px);
-            color: #fff;
-        }
-        section {
-            padding: 120px 0;
-            position: relative;
-        }
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 52px;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 16px;
-            letter-spacing: 1px;
-            background: linear-gradient(to right, #fff, var(--gold-light), #fff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .section-sub {
-            text-align: center;
-            color: #999;
-            max-width: 750px;
-            margin: 0 auto 70px;
-            font-size: 16px;
-            letter-spacing: 0.5px;
-        }
-        .grid-4, .grid-3, .grid-2 {
-            display: grid;
-            gap: 30px;
-        }
+        .hero-content { max-width: 1000px; padding: 0 20px; }
+        .hero-badge { font-size: 12px; letter-spacing: 4px; color: var(--gold); margin-bottom: 20px; text-shadow: 0 0 10px rgba(212,175,55,0.3); }
+        .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 700; line-height: 1.1; background: linear-gradient(135deg, #FFFFFF 30%, var(--gold-light) 70%, var(--gold) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 20px; filter: drop-shadow(0 4px 15px rgba(0,0,0,0.5)); }
+        .hero-sub { font-size: 18px; color: #ccc; margin-bottom: 40px; letter-spacing: 0.5px; }
+        .btn-group { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary, .btn-outline { padding: 14px 36px; border-radius: 50px; font-weight: 600; text-decoration: none; transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .btn-primary { background: var(--gold); color: #0A0A0A; box-shadow: 0 4px 20px rgba(212,175,55,0.4); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(212,175,55,0.6); background: var(--gold-light); }
+        .btn-outline { border: 1px solid rgba(212,175,55,0.5); color: var(--gold-light); background: rgba(255,255,255,0.02); backdrop-filter: blur(8px); }
+        .btn-outline:hover { border-color: var(--gold); background: rgba(212,175,55,0.12); transform: translateY(-3px); color: #fff; }
+        section { padding: 120px 0; position: relative; }
+        .section-title { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 600; text-align: center; margin-bottom: 16px; letter-spacing: 1px; background: linear-gradient(to right, #fff, var(--gold-light), #fff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .section-sub { text-align: center; color: #999; max-width: 750px; margin: 0 auto 70px; font-size: 16px; letter-spacing: 0.5px; }
+        .grid-4, .grid-3, .grid-2 { display: grid; gap: 30px; }
         .grid-4 { grid-template-columns: repeat(4,1fr); }
         .grid-3 { grid-template-columns: repeat(3,1fr); }
         .grid-2 { grid-template-columns: repeat(2,1fr); }
-        
-        .prose-block {
-            background: var(--bg-card);
-            border: 1px solid rgba(212,175,55,0.15);
-            border-radius: 28px;
-            padding: 50px 40px;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-        }
-        .prose-block p {
-            font-size: 15px;
-            line-height: 1.9;
-            color: #ccc;
-            margin-bottom: 20px;
-        }
-        .prose-block p:last-child {
-            margin-bottom: 0;
-        }
-        .application-banner {
-            background: linear-gradient(rgba(5,4,9,0.85), rgba(5,4,9,0.85)), radial-gradient(circle at 50% 50%, #241e10, #050408);
-            border-top: 1px solid rgba(212,175,55,0.15);
-            border-bottom: 1px solid rgba(212,175,55,0.15);
-            text-align: center;
-            padding: 65px 20px;
-            margin: 40px 0;
-        }
-        .application-banner p {
-            font-size: 18px;
-            color: #fff;
-            letter-spacing: 0.5px;
-            max-width: 900px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
+        .prose-block { background: var(--bg-card); border: 1px solid rgba(212,175,55,0.15); border-radius: 28px; padding: 50px 40px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+        .prose-block p { font-size: 15px; line-height: 1.9; color: #ccc; margin-bottom: 20px; }
+        .prose-block p:last-child { margin-bottom: 0; }
+        .application-banner { background: linear-gradient(rgba(5,4,9,0.85), rgba(5,4,9,0.85)), radial-gradient(circle at 50% 50%, #241e10, #050408); border-top: 1px solid rgba(212,175,55,0.15); border-bottom: 1px solid rgba(212,175,55,0.15); text-align: center; padding: 65px 20px; margin: 40px 0; }
+        .application-banner p { font-size: 18px; color: #fff; letter-spacing: 0.5px; max-width: 900px; margin: 0 auto; line-height: 1.6; }
+        .card { background: var(--bg-card); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 28px; padding: 35px 28px; border: 1px solid rgba(212,175,55,0.15); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
+        .card:hover { border-color: rgba(212,175,55,0.6); transform: translateY(-5px); box-shadow: 0 25px 45px rgba(0,0,0,0.6), var(--border-glow); }
+        .card-icon { font-size: 42px; color: var(--gold); margin-bottom: 20px; filter: drop-shadow(0 2px 8px rgba(212,175,55,0.3)); }
+        .card h3 { font-size: 24px; margin-bottom: 12px; color: #fff; }
+        .card p { color: #aaa; font-size: 14px; line-height: 1.6; }
+        .gem-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 35px; }
+        .gem-card { background: var(--bg-card); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 32px; text-align: center; padding: 35px 24px 40px; border: 1px solid rgba(212,175,55,0.15); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
+        .gem-card:hover { transform: translateY(-8px); border-color: var(--gold); box-shadow: 0 35px 55px rgba(0,0,0,0.7), var(--border-glow); }
+        .gem-img { width: 160px; height: 160px; margin: 0 auto 24px; border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 2px rgba(212,175,55,0.4), 0 15px 30px rgba(0,0,0,0.6); transition: transform 0.4s ease; }
+        .gem-card:hover .gem-img { transform: scale(1.04); box-shadow: 0 0 0 3px var(--gold), 0 15px 30px rgba(0,0,0,0.6); }
+        .gem-img img { width: 100%; height: 100%; object-fit: cover; }
+        .gem-name { font-size: 24px; font-weight: 600; font-family: 'Cormorant Garamond', serif; margin-bottom: 6px; color: #fff; }
+        .gem-size { font-size: 13px; color: var(--gold-light); letter-spacing: 1px; margin-bottom: 12px; }
+        .gem-desc { font-size: 13px; color: #aaa; margin-bottom: 24px; line-height: 1.4; }
+        .btn-inquiry-sm { background: transparent; border: 1px solid rgba(212,175,55,0.5); padding: 9px 24px; border-radius: 40px; color: var(--gold-light); font-weight: 600; cursor: pointer; transition: 0.3s; }
+        .btn-inquiry-sm:hover { background: var(--gold); color: #0A0A0A; border-color: var(--gold); box-shadow: 0 4px 12px rgba(212,175,55,0.3); }
+        .filter-bar { text-align: center; margin-bottom: 50px; }
+        .filter-btn { background: rgba(15,13,22,0.6); border: 1px solid rgba(212,175,55,0.25); padding: 9px 26px; margin: 6px; border-radius: 40px; color: #ccc; cursor: pointer; font-weight: 500; transition: 0.3s; backdrop-filter: blur(4px); }
+        .filter-btn.active, .filter-btn:hover { background: var(--gold); color: #0A0A0A; border-color: var(--gold); box-shadow: 0 4px 15px rgba(212,175,55,0.4); font-weight: 600; }
+        .steps { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-top: 40px; }
+        .step { flex: 1; text-align: center; padding: 25px 20px; background: rgba(15,13,22,0.5); border-radius: 30px; border: 1px solid rgba(212,175,55,0.1); border-bottom: 3px solid var(--gold); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .step .num { font-size: 32px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
+        .service-list { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        .service-item { background: rgba(15,13,22,0.6); padding: 20px 35px; border-radius: 60px; display: inline-flex; align-items: center; gap: 12px; border: 1px solid rgba(212,175,55,0.2); backdrop-filter: blur(8px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .news-card { background: var(--bg-card); border-radius: 24px; padding: 25px; border: 1px solid rgba(212,175,55,0.15); box-shadow: 0 15px 30px rgba(0,0,0,0.2); transition: 0.3s; }
+        .news-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+        .news-date { color: var(--gold-light); font-size: 12px; margin-bottom: 12px; }
+        .news-card h3 { color: #fff; margin-bottom: 10px; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; }
+        input, select, textarea { width: 100%; padding: 15px; margin-bottom: 18px; background: rgba(255,255,255,0.02); border: 1px solid rgba(212,175,55,0.25); border-radius: 20px; color: #fff; font-family: 'Inter', sans-serif; transition: 0.3s; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold); background: rgba(255,255,255,0.05); box-shadow: 0 0 10px rgba(212,175,55,0.2); }
+        .submit-btn { background: var(--gold); border: none; padding: 15px; border-radius: 40px; font-weight: bold; width: 100%; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px rgba(212,175,55,0.3); }
+        .submit-btn:hover { background: var(--gold-light); box-shadow: 0 6px 20px rgba(212,175,55,0.5); }
+        footer { background: #040306; padding: 80px 0 30px; border-top: 1px solid rgba(212,175,55,0.15); }
+        .footer-links a { color: #bbb; text-decoration: none; transition: 0.3s; }
+        .footer-links a:hover { color: var(--gold); }
+        .org-links a { display: inline-flex; align-items: center; gap: 6px; color: var(--gold-light); text-decoration: none; margin-right: 20px; font-weight: 500; font-size: 14px; }
+        .org-links a:hover { color: #fff; text-decoration: underline; }
 
-        .card {
-            background: var(--bg-card);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 28px;
-            padding: 35px 28px;
-            border: 1px solid rgba(212,175,55,0.15);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-        }
-        .card:hover {
-            border-color: rgba(212,175,55,0.6);
-            transform: translateY(-5px);
-            box-shadow: 0 25px 45px rgba(0,0,0,0.6), var(--border-glow);
-        }
-        .card-icon {
-            font-size: 42px;
-            color: var(--gold);
-            margin-bottom: 20px;
-            filter: drop-shadow(0 2px 8px rgba(212,175,55,0.3));
-        }
-        .card h3 {
-            font-size: 24px;
-            margin-bottom: 12px;
-            color: #fff;
-        }
-        .card p {
-            color: #aaa;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        .gem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 35px;
-        }
-        .gem-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 32px;
-            text-align: center;
-            padding: 35px 24px 40px;
-            border: 1px solid rgba(212,175,55,0.15);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            cursor: pointer;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-        }
-        .gem-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--gold);
-            box-shadow: 0 35px 55px rgba(0,0,0,0.7), var(--border-glow);
-        }
-        .gem-img {
-            width: 160px;
-            height: 160px;
-            margin: 0 auto 24px;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 0 0 2px rgba(212,175,55,0.4), 0 15px 30px rgba(0,0,0,0.6);
-            transition: transform 0.4s ease;
-        }
-        .gem-card:hover .gem-img {
-            transform: scale(1.04);
-            box-shadow: 0 0 0 3px var(--gold), 0 15px 30px rgba(0,0,0,0.6);
-        }
-        .gem-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .gem-name {
-            font-size: 24px;
-            font-weight: 600;
-            font-family: 'Cormorant Garamond', serif;
-            margin-bottom: 6px;
-            color: #fff;
-        }
-        .gem-size {
-            font-size: 13px;
-            color: var(--gold-light);
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-        }
-        .gem-desc {
-            font-size: 13px;
-            color: #aaa;
-            margin-bottom: 24px;
-            line-height: 1.4;
-        }
-        .btn-inquiry-sm {
-            background: transparent;
-            border: 1px solid rgba(212,175,55,0.5);
-            padding: 9px 24px;
-            border-radius: 40px;
-            color: var(--gold-light);
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .btn-inquiry-sm:hover {
-            background: var(--gold);
-            color: #0A0A0A;
-            border-color: var(--gold);
-            box-shadow: 0 4px 12px rgba(212,175,55,0.3);
-        }
-        .filter-bar {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        .filter-btn {
-            background: rgba(15,13,22,0.6);
-            border: 1px solid rgba(212,175,55,0.25);
-            padding: 9px 26px;
-            margin: 6px;
-            border-radius: 40px;
-            color: #ccc;
-            cursor: pointer;
-            font-weight: 500;
-            transition: 0.3s;
-            backdrop-filter: blur(4px);
-        }
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--gold);
-            color: #0A0A0A;
-            border-color: var(--gold);
-            box-shadow: 0 4px 15px rgba(212,175,55,0.4);
-            font-weight: 600;
-        }
-        .steps {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 40px;
-        }
-        .step {
-            flex: 1;
-            text-align: center;
-            padding: 25px 20px;
-            background: rgba(15,13,22,0.5);
-            border-radius: 30px;
-            border: 1px solid rgba(212,175,55,0.1);
-            border-bottom: 3px solid var(--gold);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        .step .num {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 5px;
-        }
-        .service-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .service-item {
-            background: rgba(15,13,22,0.6);
-            padding: 20px 35px;
-            border-radius: 60px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            border: 1px solid rgba(212,175,55,0.2);
-            backdrop-filter: blur(8px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        .news-card {
-            background: var(--bg-card);
-            border-radius: 24px;
-            padding: 25px;
-            border: 1px solid rgba(212,175,55,0.15);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-            transition: 0.3s;
-        }
-        .news-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-3px);
-        }
-        .news-date {
-            color: var(--gold-light);
-            font-size: 12px;
-            margin-bottom: 12px;
-        }
-        .news-card h3 {
-            color: #fff;
-            margin-bottom: 10px;
-        }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 60px;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 18px;
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(212,175,55,0.25);
-            border-radius: 20px;
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-            transition: 0.3s;
-        }
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--gold);
-            background: rgba(255,255,255,0.05);
-            box-shadow: 0 0 10px rgba(212,175,55,0.2);
-        }
-        .submit-btn {
-            background: var(--gold);
-            border: none;
-            padding: 15px;
-            border-radius: 40px;
-            font-weight: bold;
-            width: 100%;
-            cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(212,175,55,0.3);
-        }
-        .submit-btn:hover {
-            background: var(--gold-light);
-            box-shadow: 0 6px 20px rgba(212,175,55,0.5);
-        }
-        footer {
-            background: #040306;
-            padding: 80px 0 30px;
-            border-top: 1px solid rgba(212,175,55,0.15);
-        }
-        .footer-links a {
-            color: #bbb;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        .footer-links a:hover {
-            color: var(--gold);
-        }
-        .org-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--gold-light);
-            text-decoration: none;
-            margin-right: 20px;
-            font-weight: 500;
-            font-size: 14px;
-        }
-        .org-links a:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        /* 【优化：移动端高级响应式与防漏底设计】 */
+        /* 移动端响应式面板 */
         @media (max-width: 992px) {
             .menu-toggle { 
                 display: block; 
@@ -521,7 +274,7 @@
                 display: flex;
                 position: fixed;
                 top: 0;
-                right: -100%; /* 侧滑隐藏动画 */
+                right: -100%; 
                 width: 75%;
                 height: 100vh;
                 background: rgba(12, 10, 18, 0.98);
@@ -542,6 +295,10 @@
             .nav-links a {
                 font-size: 18px;
             }
+            /* 手机端把语言选择器塞入更显眼的地方 */
+            .custom-lang-selector {
+                margin-top: 10px;
+            }
             .hero h1 { font-size: 44px; }
             .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
             .contact-grid { grid-template-columns: 1fr; }
@@ -553,23 +310,43 @@
 </head>
 <body>
 
+<!-- 隐藏的谷歌官方翻译触发器（用于底层驱动，被我们的好看界面操控） -->
+<div id="google_translate_element"></div>
+
 <!-- 特效画布层 -->
 <canvas id="particle-canvas"></canvas>
 
 <header id="header">
     <div class="header-inner">
         <div class="logo"><img src="logo.PNG" alt="YNM GEMS"></div>
-        <!-- 移动端汉堡菜单图标 -->
-        <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#about">ABOUT US</a></li>
-            <li><a href="#products">PRODUCTS</a></li>
-            <li><a href="#cooperation">PARTNERSHIP</a></li>
-            <li><a href="#education">GEM EDUCATION</a></li>
-            <li><a href="#news">NEWS</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-        </ul>
+        
+        <div class="nav-right-wrap">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+                <li><a href="#products">PRODUCTS</a></li>
+                <li><a href="#cooperation">PARTNERSHIP</a></li>
+                <li><a href="#education">GEM EDUCATION</a></li>
+                <li><a href="#news">NEWS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+                
+                <!-- 【多语言切换菜单】放置于导航栏内 -->
+                <li class="custom-lang-selector">
+                    <div class="lang-selected" id="langSelected">
+                        <i class="fas fa-globe"></i> <span>Language</span> <i class="fas fa-chevron-down" style="font-size:10px;"></i>
+                    </div>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button class="lang-opt" onclick="changeLanguage('en')">English</button>
+                        <button class="lang-opt" onclick="changeLanguage('zh-CN')">简体中文</button>
+                        <button class="lang-opt" onclick="changeLanguage('th')">ภาษาไทย</button>
+                        <button class="lang-opt" onclick="changeLanguage('hi')">हिन्दी (India)</button>
+                    </div>
+                </li>
+            </ul>
+            
+            <!-- 移动端汉堡菜单图标 -->
+            <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+        </div>
     </div>
 </header>
 
@@ -755,9 +532,6 @@
                     <a href="https://www.gia.edu/gem-identification" target="_blank" style="color:var(--gold); text-decoration: none; display:inline-block; margin-top:10px;">Read more →</a>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="#" class="btn-outline">View All <i class="fas fa-arrow-right"></i></a>
-            </div>
         </div>
     </section>
 
@@ -807,18 +581,7 @@
             <div class="footer-links">
                 <h4 style="color: var(--gold); margin-bottom: 15px; font-family: 'Cormorant Garamond', serif; font-size: 20px;">Quick Links</h4>
                 <p style="line-height: 2;"><a href="#about">About Us</a> | <a href="#products">Products</a> | <a href="#cooperation">Partnership</a> | <a href="#education">Gem Education</a> | <a href="#news">News</a></p>
-                <p style="margin-top: 10px; color:#777;"><i class="fab fa-linkedin"></i> LinkedIn | <i class="fab fa-instagram"></i> Instagram</p>
             </div>
-        </div>
-        
-        <div style="border-top: 1px solid rgba(212,175,55,0.1); padding-top: 20px; margin-bottom: 20px;" class="org-links">
-            <span style="color:#666; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px;">Industry Resources:</span>
-            <a href="https://www.gia.edu" target="_blank"><i class="fas fa-external-link-alt"></i> GIA Official Website</a>
-            <a href="https://www.gemstone.org" target="_blank"><i class="fas fa-external-link-alt"></i> ICA Official Website</a>
-        </div>
-
-        <div class="copyright" style="text-align: center; font-size: 12px; color: #444; border-top: 1px solid rgba(255,255,255,0.03); padding-top: 15px;">
-            natural gemstones wholesale, round cut, B2B gemstone trading, OEM custom
         </div>
     </div>
 </footer>
@@ -828,8 +591,51 @@
     <a href="mailto:kimona99999@gmail.com" class="float-email" style="background: var(--gold); width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: black; font-size: 24px; text-decoration: none;"><i class="fas fa-envelope"></i></a>
 </div>
 
+<!-- 【底层逻辑驱动】引入谷歌多语言翻译官方微件脚本 -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en', // 网站默认主语言为英文
+    includedLanguages: 'en,zh-CN,th,hi', // 只允许切换 英文、中文、泰语、印度语
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 <script>
-    // 【全新粒子调优：极致对比度星芒】
+    // 【多语言核心操控脚本】
+    const langSelected = document.getElementById('langSelected');
+    const langDropdown = document.getElementById('langDropdown');
+
+    // 点击切换下拉菜单的显示与隐藏
+    langSelected.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langDropdown.classList.toggle('show');
+    });
+
+    document.addEventListener('click', () => {
+        langDropdown.classList.remove('show');
+    });
+
+    // 核心切换逻辑：精准模拟谷歌内部下拉菜单的选择
+    function changeLanguage(langCode) {
+        const googleSelect = document.querySelector('.goog-te-combo');
+        if (googleSelect) {
+            googleSelect.value = langCode;
+            // 触发浏览器的变更事件，让谷歌内核翻译全页
+            googleSelect.dispatchEvent(new Event('change'));
+            
+            // 动态修改前台显示的语言名称提示
+            const langNames = { 'en': 'English', 'zh-CN': '简体中文', 'th': 'ภาษาไทย', 'hi': 'हिन्दी' };
+            langSelected.querySelector('span').innerText = langNames[langCode] || 'Language';
+        } else {
+            alert("Translation service loading, please try again in a second.");
+        }
+    }
+
+    // 粒子背景动效逻辑
     const canvas = document.getElementById('particle-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
@@ -855,7 +661,6 @@
         draw() {
             ctx.save();
             ctx.globalAlpha = this.alpha;
-            
             ctx.strokeStyle = '#FFE082'; 
             ctx.lineWidth = 1.2;
             ctx.beginPath();
@@ -869,21 +674,16 @@
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size * 0.6, 0, Math.PI * 2);
             ctx.fill();
-            
             ctx.restore();
         }
         update() {
             this.alpha += this.blinkSpeed;
-            if (this.alpha > 0.95 || this.alpha < 0.25) {
-                this.blinkSpeed = -this.blinkSpeed;
-            }
+            if (this.alpha > 0.95 || this.alpha < 0.25) this.blinkSpeed = -this.blinkSpeed;
 
-            // 【优化：只有非触摸屏才执行鼠标联动，避免手机滑动冲突】
             if (mouse.x !== null) {
                 let dx = mouse.x - this.x;
                 let dy = mouse.y - this.y;
                 let distance = Math.hypot(dx, dy);
-                
                 if (distance < mouse.radius) {
                     let force = (mouse.radius - distance) / mouse.radius;
                     this.x += (dx / distance) * force * 2.5;
@@ -891,26 +691,16 @@
                     return;
                 }
             }
-            
-            if (this.x !== this.baseX) {
-                let dxBase = this.baseX - this.x;
-                this.x += dxBase * 0.05;
-            }
-            if (this.y !== this.baseY) {
-                let dyBase = this.baseY - this.y;
-                this.y += dyBase * 0.05;
-            }
+            if (this.x !== this.baseX) this.x += (this.baseX - this.x) * 0.05;
+            if (this.y !== this.baseY) this.y += (this.baseY - this.y) * 0.05;
         }
     }
 
     function initParticles() {
         particles = [];
-        // 如果是手机端，适当减少粒子数，省电不发烫
         const density = window.innerWidth < 768 ? 25000 : 14000;
         const count = Math.min(110, Math.floor((canvas.width * canvas.height) / density));
-        for (let i = 0; i < count; i++) {
-            particles.push(new GemSparkle());
-        }
+        for (let i = 0; i < count; i++) particles.push(new GemSparkle());
     }
 
     function animate() {
@@ -918,21 +708,13 @@
         particles.forEach(p => { p.update(); p.draw(); });
         requestAnimationFrame(animate);
     }
-    
     initParticles();
     animate();
 
-    window.addEventListener('mousemove', (e) => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-    });
-    
-    window.addEventListener('mouseleave', () => {
-        mouse.x = null;
-        mouse.y = null;
-    });
+    window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+    window.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
 
-    // 宝石列表数据维持原样
+    // 宝石集锦展示数据
     const gemstonesData = [
         { name: "Natural Ruby", size: "0.7-5.0mm", desc: "Vivid red, excellent saturation", category: "red", img: "ruby.jpg" },
         { name: "Blue Sapphire", size: "0.7-5.0mm", desc: "Cornflower to royal blue", category: "blue", img: "sapphire.PNG" },
@@ -978,22 +760,16 @@
         else header.classList.remove('scrolled');
     });
 
-    // 【核心交互优化：手机端汉堡菜单更顺畅，且点击后自动关闭】
+    // 响应式移动端菜单
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
 
     menuToggle.addEventListener("click", () => {
         navLinks.classList.toggle("active");
-        // 动态更换图标样式 (三杠 与 关闭叉号 切换)
         const icon = menuToggle.querySelector("i");
-        if(navLinks.classList.contains("active")) {
-            icon.className = "fas fa-times";
-        } else {
-            icon.className = "fas fa-bars";
-        }
+        icon.className = navLinks.classList.contains("active") ? "fas fa-times" : "fas fa-bars";
     });
 
-    // 点击菜单内任意链接后，自动缩回菜单（解决移动端死锁问题）
     document.querySelectorAll(".nav-links a").forEach(link => {
         link.addEventListener("click", () => {
             navLinks.classList.remove("active");

@@ -188,7 +188,6 @@
         .grid-3 { grid-template-columns: repeat(3,1fr); }
         .grid-2 { grid-template-columns: repeat(2,1fr); }
         
-        /* About & Education Style Extensions */
         .prose-block {
             background: var(--bg-card);
             border: 1px solid rgba(212,175,55,0.2);
@@ -204,18 +203,6 @@
         }
         .prose-block p:last-child {
             margin-bottom: 0;
-        }
-        .edu-box h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 26px;
-            color: var(--gold);
-            margin-top: 30px;
-            margin-bottom: 15px;
-            border-left: 3px solid var(--gold);
-            padding-left: 15px;
-        }
-        .edu-box h3:first-child {
-            margin-top: 0;
         }
         .application-banner {
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), radial-gradient(circle at 50% 50%, #1a1508, #010101);
@@ -512,22 +499,23 @@
     <section id="about" style="background: #0d0d12;">
         <div class="container">
             <h2 class="section-title">About YNM GEMS</h2>
-            <div class="section-sub">Professional natural gemstone manufacturer & wholesale supplier</div>
-            <div class="prose-block">
-                <p>
-                    YNM GEMS is a professional natural gemstone manufacturer and wholesale supplier located in Wuzhou, Guangxi, China, one of the world's largest gemstone cutting and trading centers.
+            <div class="section-sub">Empowering Global Jewelry Brands with Precision Craftsmanship</div>
+            
+            <div class="prose-block" style="border-left: 4px solid var(--gold); padding-left: 35px;">
+                <p style="font-size: 16px; color: #fff; font-weight: 500;">
+                    Located in Wuzhou, Guangxi, China—the world’s premier gemstone cutting and trading capital—<strong>YNM GEMS</strong> stands as a leading professional manufacturer and wholesale B2B supplier.
                 </p>
                 <p>
-                    With more than 15 years of experience in the gemstone industry, we specialize in precision-cut calibrated round gemstones ranging from 0.7mm to 5.0mm. Our products are widely used by jewelry manufacturers, jewelry brands, gemstone wholesalers, retailers and designers worldwide.
+                    With <strong>over 15 years of master supply chain expertise</strong>, we specialize in the art of precision-cut, calibrated round gemstones ranging from <strong>0.7mm to 5.0mm</strong>. Engineered for flawless setting, our calibrated stones are the trusted choice for high-end jewelry manufacturers, custom luxury brands, global wholesalers, and independent designers worldwide.
                 </p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; padding: 20px 0; border-top: 1px solid rgba(212,175,55,0.1); border-bottom: 1px solid rgba(212,175,55,0.1);">
+                    <div><i class="fas fa-gem" style="color:var(--gold); margin-right:8px;"></i> <strong>Core Varieties:</strong><br><span style="color:#aaa; font-size:14px;">Tsavorite, Ruby, Sapphire (Blue, Pink, White), White Topaz, Garnet, Peridot, Amethyst, Citrine, Smoky Quartz, and Chrome Diopside.</span></div>
+                    <div><i class="fas fa-cogs" style="color:var(--gold); margin-right:8px;"></i> <strong>B2B Solutions:</strong><br><span style="color:#aaa; font-size:14px;">Wholesale bulk supply, OEM customization, tailored precision cutting, mixed parcel sourcing, and global insured freight.</span></div>
+                </div>
+
                 <p>
-                    Our main gemstone varieties include Tsavorite, Ruby, Blue Sapphire, Pink Sapphire, White Sapphire, White Topaz, Garnet, Peridot, Amethyst, Citrine, Smoky Quartz, Tourmaline and Chrome Diopside.
-                </p>
-                <p>
-                    We provide wholesale gemstone supply, OEM gemstone solutions, custom gemstone cutting services, mixed parcel sourcing and worldwide shipping support. Every gemstone is carefully inspected to ensure excellent brilliance, consistent size and reliable quality.
-                </p>
-                <p>
-                    Today, YNM GEMS serves customers across North America, Europe, Southeast Asia, the Middle East and other international markets, helping jewelry businesses source premium natural gemstones directly from China.
+                    Every single stone undergoes a rigorous <strong>Triple Quality Sorting</strong> process to guarantee exceptional brilliance, uniform sizing, and reliable color consistency. Today, YNM GEMS proudly serves elite client networks across North America, Europe, Southeast Asia, and the Middle East—bridging the gap between fine Chinese craftsmanship and global jewelry excellence.
                 </p>
             </div>
         </div>
@@ -589,31 +577,44 @@
     <section id="education" style="background: #06060a;">
         <div class="container">
             <h2 class="section-title">Gemstone Knowledge & Guides</h2>
-            <div class="section-sub">Explore industry standards, cutting craftsmanship, and buying guides</div>
-            <div class="prose-block edu-box">
-                <h3>What Determines Gemstone Quality?</h3>
-                <p>
-                    The quality of a natural gemstone is generally evaluated according to four important factors: Color, Clarity, Cut and Carat Weight.
-                </p>
-                <p>
-                    Color is often the most important factor influencing gemstone value. Rich saturation, excellent transparency and even color distribution are highly desirable.
-                </p>
-                <p>
-                    Precision cutting directly affects brilliance and light reflection. A well-cut gemstone appears brighter and more attractive in jewelry settings.
-                </p>
+            <div class="section-sub">Essential insights into gemstone grading, origins, and selection</div>
+            
+            <div class="grid-3" style="margin-top: 40px;">
+                <!-- Card 1: Quality -->
+                <div class="card" style="background: rgba(20,20,25,0.6); padding: 35px 25px;">
+                    <div style="font-size: 11px; color: var(--gold); letter-spacing: 2px; margin-bottom: 12px; font-weight: 600;">01 / GRADING STANDARDS</div>
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 26px; margin-bottom: 15px; color: #fff;">What Determines Quality?</h3>
+                    <p style="font-size: 14px; line-height: 1.6; color: #bbb; margin-bottom: 15px;">
+                        The value of a natural gemstone relies on the classic <strong>4Cs: Color, Clarity, Cut, and Carat Weight</strong>. 
+                    </p>
+                    <p style="font-size: 14px; line-height: 1.6; color: #bbb;">
+                        While rich saturation and uniform color drive initial desire, it is <strong>Precision Cutting</strong> that unlocks a stone's true brilliance, directly impacting how it reflects light in a finished jewelry setting.
+                    </p>
+                </div>
 
-                <h3>Natural vs Synthetic Gemstones</h3>
-                <p>
-                    Natural gemstones are formed through geological processes over millions of years. Synthetic gemstones are laboratory-created materials with similar physical properties but different origins and market values.
-                </p>
+                <!-- Card 2: Natural vs Synthetic -->
+                <div class="card" style="background: rgba(20,20,25,0.6); padding: 35px 25px;">
+                    <div style="font-size: 11px; color: var(--gold); letter-spacing: 2px; margin-bottom: 12px; font-weight: 600;">02 / MARKET INSIGHT</div>
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 26px; margin-bottom: 15px; color: #fff;">Natural vs. Synthetic</h3>
+                    <p style="font-size: 14px; line-height: 1.6; color: #bbb; margin-bottom: 15px;">
+                        <strong>Natural gemstones</strong> are geological masterpieces formed over millions of years, holding intrinsic rarity and investment value. 
+                    </p>
+                    <p style="font-size: 14px; line-height: 1.6; color: #bbb;">
+                        <strong>Synthetic counterparts</strong> are grown in labs; though they share identical chemical properties, they serve a different market and lack the unique prestige and enduring value of nature's own creations.
+                    </p>
+                </div>
 
-                <h3>Popular Natural Gemstones</h3>
-                <p>
-                    Ruby is famous for its vivid red color. Sapphire is available in blue, pink and white varieties. Tsavorite offers a vibrant green appearance, while Tourmaline is known for its wide range of colors.
-                </p>
-                <p>
-                    Garnet, Peridot, Amethyst, Citrine and White Topaz are also widely used in fine jewelry manufacturing due to their beauty and affordability.
-                </p>
+                <!-- Card 3: Popular Gems -->
+                <div class="card" style="background: rgba(20,20,25,0.6); padding: 35px 25px;">
+                    <div style="font-size: 11px; color: var(--gold); letter-spacing: 2px; margin-bottom: 12px; font-weight: 600;">03 / PORTFOLIO AESTHETICS</div>
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 26px; margin-bottom: 15px; color: #fff;">Popular Varieties</h3>
+                    <p style="font-size: 14px; line-height: 1.6; color: #bbb; margin-bottom: 15px;">
+                        From the vivid passion of <strong>Ruby</strong> and the multi-hued majesty of <strong>Sapphire</strong> (Blue, Pink, White), to the vibrant green of <strong>Tsavorite</strong> and <strong>Tourmaline</strong>, premium gemstones define fine luxury.
+                    </p>
+                    <p style="font-size: 14px; line-height: 1.6; color: #bbb;">
+                        Meanwhile, beauties like Garnet, Peridot, Amethyst, Citrine, and White Topaz offer an elegant balance of striking aesthetics and commercial affordability for large-scale manufacturing.
+                    </p>
+                </div>
             </div>
         </div>
     </section>

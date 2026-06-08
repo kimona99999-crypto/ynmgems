@@ -21,9 +21,10 @@
             padding: 0;
             box-sizing: border-box;
         }
+        
+        /* 【全新改版：钛金丝绒流光背景】彻底告别死黑，用深邃的星空暗紫与钛金黑交织，产生高级天鹅绒质感 */
         body {
-            /* 【强效升级】增强渐变对比度，让中央的丝绒高光极为明显 */
-            background: radial-gradient(circle at 50% 35%, #1c1a22 0%, #0c0b0f 45%, #030304 100%) !important;
+            background: radial-gradient(circle at 50% 30%, #110e1c 0%, #08070d 50%, #030305 100%) !important;
             color: #E6E6E6;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
@@ -32,11 +33,11 @@
             --gold: #D4AF37;
             --gold-light: #F2D880;
             --gold-dark: #9E7B1F;
-            --bg-card: rgba(22, 22, 30, 0.7);
+            --bg-card: rgba(18, 16, 24, 0.75); /* 配合新背景微调卡片色调 */
             --border-glow: 0 0 15px rgba(212, 175, 55, 0.15);
         }
         
-        /* 【关键修正】提高层级并允许鼠标穿透，防止粒子被网页卡片遮挡 */
+        /* 【特效强效穿透与滤色】 */
         #particle-canvas {
             position: fixed;
             top: 0;
@@ -45,6 +46,7 @@
             height: 100%;
             pointer-events: none;
             z-index: 999; 
+            mix-blend-mode: screen; /* 开启滤色模式，让光芒完美叠加在网页上 */
         }
         
         .container {
@@ -61,13 +63,13 @@
             z-index: 1000;
             padding: 18px 40px;
             transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            background: rgba(8, 8, 10, 0.6);
+            background: rgba(8, 7, 12, 0.6);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(212, 175, 55, 0.15);
         }
         header.scrolled {
-            background: rgba(5, 5, 7, 0.85);
+            background: rgba(5, 4, 8, 0.85);
             padding: 12px 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
@@ -102,6 +104,8 @@
             cursor: pointer;
             color: var(--gold);
         }
+        
+        /* Hero 区域背景环境光微调 */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -109,7 +113,7 @@
             justify-content: center;
             text-align: center;
             position: relative;
-            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 65%);
+            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.09) 0%, transparent 70%);
         }
         .hero-content {
             max-width: 1000px;
@@ -226,7 +230,7 @@
             margin-bottom: 0;
         }
         .application-banner {
-            background: linear-gradient(rgba(5,5,7,0.85), rgba(5,5,7,0.85)), radial-gradient(circle at 50% 50%, #241e10, #050507);
+            background: linear-gradient(rgba(5,4,9,0.85), rgba(5,4,9,0.85)), radial-gradient(circle at 50% 50%, #241e10, #050408);
             border-top: 1px solid rgba(212,175,55,0.15);
             border-bottom: 1px solid rgba(212,175,55,0.15);
             text-align: center;
@@ -353,7 +357,7 @@
             margin-bottom: 50px;
         }
         .filter-btn {
-            background: rgba(15,15,20,0.6);
+            background: rgba(15,13,22,0.6);
             border: 1px solid rgba(212,175,55,0.25);
             padding: 9px 26px;
             margin: 6px;
@@ -382,7 +386,7 @@
             flex: 1;
             text-align: center;
             padding: 25px 20px;
-            background: rgba(15,15,20,0.5);
+            background: rgba(15,13,22,0.5);
             border-radius: 30px;
             border: 1px solid rgba(212,175,55,0.1);
             border-bottom: 3px solid var(--gold);
@@ -401,7 +405,7 @@
             justify-content: center;
         }
         .service-item {
-            background: rgba(15,15,20,0.6);
+            background: rgba(15,13,22,0.6);
             padding: 20px 35px;
             border-radius: 60px;
             display: inline-flex;
@@ -441,7 +445,7 @@
             width: 100%;
             padding: 15px;
             margin-bottom: 18px;
-            background: rgba(255,255,255,0.03);
+            background: rgba(255,255,255,0.02);
             border: 1px solid rgba(212,175,55,0.25);
             border-radius: 20px;
             color: #fff;
@@ -451,7 +455,7 @@
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--gold);
-            background: rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.05);
             box-shadow: 0 0 10px rgba(212,175,55,0.2);
         }
         .submit-btn {
@@ -470,7 +474,7 @@
             box-shadow: 0 6px 20px rgba(212,175,55,0.5);
         }
         footer {
-            background: #050507;
+            background: #040306;
             padding: 80px 0 30px;
             border-top: 1px solid rgba(212,175,55,0.15);
         }
@@ -504,12 +508,12 @@
                 top: 70px;
                 left: 0;
                 width: 100%;
-                background: #0A0A0A;
+                background: #0c0a12;
                 flex-direction: column;
                 text-align: center;
                 padding: 30px;
                 gap: 20px;
-                border-bottom: 1px solid rgba(212,175,55,0.2);
+                border-bottom: 1px solid rgba(212, 175, 55, 0.2);
             }
             .nav-links.active { display: flex; }
             .hero h1 { font-size: 48px; }
@@ -521,7 +525,7 @@
 </head>
 <body>
 
-<!-- 高奢重构 Canvas 背景 -->
+<!-- 特效画布层 -->
 <canvas id="particle-canvas"></canvas>
 
 <header id="header">
@@ -649,7 +653,6 @@
             <div class="section-sub">Essential insights into gemstone grading, origins, and selection</div>
             
             <div class="grid-3" style="margin-top: 40px;">
-                <!-- Card 1: Quality -->
                 <div class="card" style="padding: 35px 25px;">
                     <div style="font-size: 11px; color: var(--gold); letter-spacing: 2px; margin-bottom: 12px; font-weight: 600;">01 / GRADING STANDARDS</div>
                     <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 26px; margin-bottom: 15px; color: #fff;">What Determines Quality?</h3>
@@ -661,7 +664,6 @@
                     </p>
                 </div>
 
-                <!-- Card 2: Natural vs Synthetic -->
                 <div class="card" style="padding: 35px 25px;">
                     <div style="font-size: 11px; color: var(--gold); letter-spacing: 2px; margin-bottom: 12px; font-weight: 600;">02 / MARKET INSIGHT</div>
                     <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 26px; margin-bottom: 15px; color: #fff;">Natural vs. Synthetic</h3>
@@ -673,7 +675,6 @@
                     </p>
                 </div>
 
-                <!-- Card 3: Popular Gems -->
                 <div class="card" style="padding: 35px 25px;">
                     <div style="font-size: 11px; color: var(--gold); letter-spacing: 2px; margin-bottom: 12px; font-weight: 600;">03 / PORTFOLIO AESTHETICS</div>
                     <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 26px; margin-bottom: 15px; color: #fff;">Popular Varieties</h3>
@@ -732,7 +733,7 @@
     </section>
 
     <!-- Contact & Form Section -->
-    <section id="contact" style="background: rgba(3, 3, 5, 0.2);">
+    <section id="contact" style="background: rgba(3, 2, 6, 0.2);">
         <div class="container">
             <div class="contact-grid">
                 <div>
@@ -781,7 +782,6 @@
             </div>
         </div>
         
-        <!-- Industry Resources Verification Links -->
         <div style="border-top: 1px solid rgba(212,175,55,0.1); padding-top: 20px; margin-bottom: 20px;" class="org-links">
             <span style="color:#666; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px;">Industry Resources:</span>
             <a href="https://www.gia.edu" target="_blank"><i class="fas fa-external-link-alt"></i> GIA Official Website</a>
@@ -794,14 +794,13 @@
     </div>
 </footer>
 
-<!-- Floating Action Buttons -->
 <div class="float-buttons" style="position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 12px; z-index: 99;">
     <a href="https://wa.me/8618276412661" class="float-wa" style="background:#25D366; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); text-decoration: none;"><i class="fab fa-whatsapp"></i></a>
     <a href="mailto:kimona99999@gmail.com" class="float-email" style="background: var(--gold); width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: black; font-size: 24px; text-decoration: none;"><i class="fas fa-envelope"></i></a>
 </div>
 
 <script>
-    // 【深度升级】钻石四角星芒切割与高穿透粒子动画
+    // 【全新粒子调优：极致对比度星芒】
     const canvas = document.getElementById('particle-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
@@ -818,50 +817,48 @@
         constructor() {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 4 + 1.5; // 稍微调大星芒尺寸使之容易观察
+            this.size = Math.random() * 4 + 2; // 强化尺寸基数
             this.baseX = this.x;
             this.baseY = this.y;
-            this.alpha = Math.random() * 0.5 + 0.2;
-            this.blinkSpeed = Math.random() * 0.015 + 0.005;
+            this.alpha = Math.random() * 0.6 + 0.3; // 提升基础透明度
+            this.blinkSpeed = Math.random() * 0.02 + 0.008;
         }
         draw() {
             ctx.save();
             ctx.globalAlpha = this.alpha;
             
-            // 绘制精细的四角钻石十字星芒
-            ctx.strokeStyle = '#E2C266'; 
-            ctx.lineWidth = 0.8;
+            // 采用对比度极高的亮钛金四角十字星芒
+            ctx.strokeStyle = '#FFE082'; 
+            ctx.lineWidth = 1.2;
             ctx.beginPath();
-            ctx.moveTo(this.x - this.size * 2.5, this.y);
-            ctx.lineTo(this.x + this.size * 2.5, this.y);
-            ctx.moveTo(this.x, this.y - this.size * 2.5);
-            ctx.lineTo(this.x, this.y + this.size * 2.5);
+            ctx.moveTo(this.x - this.size * 3, this.y);
+            ctx.lineTo(this.x + this.size * 3, this.y);
+            ctx.moveTo(this.x, this.y - this.size * 3);
+            ctx.lineTo(this.x, this.y + this.size * 3);
             ctx.stroke();
 
-            // 钻石中心核心高亮点
+            // 中心核心纯白高亮点，保证闪烁穿透力
             ctx.fillStyle = '#FFFFFF';
             ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size * 0.5, 0, Math.PI * 2);
+            ctx.arc(this.x, this.y, this.size * 0.6, 0, Math.PI * 2);
             ctx.fill();
             
             ctx.restore();
         }
         update() {
-            // 呼吸闪烁
             this.alpha += this.blinkSpeed;
-            if (this.alpha > 0.8 || this.alpha < 0.2) {
+            if (this.alpha > 0.95 || this.alpha < 0.25) {
                 this.blinkSpeed = -this.blinkSpeed;
             }
 
-            // 鼠标交互运动
             let dx = mouse.x - this.x;
             let dy = mouse.y - this.y;
             let distance = Math.hypot(dx, dy);
             
             if (distance < mouse.radius) {
                 let force = (mouse.radius - distance) / mouse.radius;
-                this.x += (dx / distance) * force * 2;
-                this.y += (dy / distance) * force * 2;
+                this.x += (dx / distance) * force * 2.5;
+                this.y += (dy / distance) * force * 2.5;
             } else {
                 if (this.x !== this.baseX) {
                     let dxBase = this.baseX - this.x;
@@ -877,7 +874,8 @@
 
     function initParticles() {
         particles = [];
-        const count = Math.min(80, Math.floor((canvas.width * canvas.height) / 18000));
+        // 适当增加粒子密度，让视觉感更充沛
+        const count = Math.min(110, Math.floor((canvas.width * canvas.height) / 14000));
         for (let i = 0; i < count; i++) {
             particles.push(new GemSparkle());
         }

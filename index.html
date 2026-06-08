@@ -22,8 +22,8 @@
             box-sizing: border-box;
         }
         body {
-            /* 升级：深度融合多重暗夜渐变，营造宛如奢华珠宝展柜的黑天鹅绒空间感 */
-            background: radial-gradient(circle at 50% 30%, #141318 0%, #08080a 60%, #030304 100%);
+            /* 【强效升级】增强渐变对比度，让中央的丝绒高光极为明显 */
+            background: radial-gradient(circle at 50% 35%, #1c1a22 0%, #0c0b0f 45%, #030304 100%) !important;
             color: #E6E6E6;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
@@ -32,9 +32,11 @@
             --gold: #D4AF37;
             --gold-light: #F2D880;
             --gold-dark: #9E7B1F;
-            --bg-card: rgba(18, 18, 24, 0.65);
+            --bg-card: rgba(22, 22, 30, 0.7);
             --border-glow: 0 0 15px rgba(212, 175, 55, 0.15);
         }
+        
+        /* 【关键修正】提高层级并允许鼠标穿透，防止粒子被网页卡片遮挡 */
         #particle-canvas {
             position: fixed;
             top: 0;
@@ -42,8 +44,9 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 1;
+            z-index: 999; 
         }
+        
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -106,8 +109,7 @@
             justify-content: center;
             text-align: center;
             position: relative;
-            /* 在Hero中心追加一道幽暗的高光，聚焦中心文字 */
-            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 65%);
         }
         .hero-content {
             max-width: 1000px;
@@ -224,7 +226,7 @@
             margin-bottom: 0;
         }
         .application-banner {
-            background: linear-gradient(rgba(5,5,7,0.9), rgba(5,5,7,0.9)), radial-gradient(circle at 50% 50%, #1f1a0e, #050507);
+            background: linear-gradient(rgba(5,5,7,0.85), rgba(5,5,7,0.85)), radial-gradient(circle at 50% 50%, #241e10, #050507);
             border-top: 1px solid rgba(212,175,55,0.15);
             border-bottom: 1px solid rgba(212,175,55,0.15);
             text-align: center;
@@ -563,7 +565,7 @@
     </div>
 
     <!-- About Us Section -->
-    <section id="about" style="background: rgba(13, 13, 18, 0.5);">
+    <section id="about" style="background: transparent;">
         <div class="container">
             <h2 class="section-title">About YNM GEMS</h2>
             <div class="section-sub">Empowering Global Jewelry Brands with Precision Craftsmanship</div>
@@ -641,14 +643,14 @@
     </section>
 
     <!-- Gem Education Section -->
-    <section id="education" style="background: rgba(6, 6, 10, 0.3);">
+    <section id="education" style="background: transparent;">
         <div class="container">
             <h2 class="section-title">Gemstone Knowledge & Guides</h2>
             <div class="section-sub">Essential insights into gemstone grading, origins, and selection</div>
             
             <div class="grid-3" style="margin-top: 40px;">
                 <!-- Card 1: Quality -->
-                <div class="card" style="background: rgba(20,20,25,0.5); padding: 35px 25px;">
+                <div class="card" style="padding: 35px 25px;">
                     <div style="font-size: 11px; color: var(--gold); letter-spacing: 2px; margin-bottom: 12px; font-weight: 600;">01 / GRADING STANDARDS</div>
                     <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 26px; margin-bottom: 15px; color: #fff;">What Determines Quality?</h3>
                     <p style="font-size: 14px; line-height: 1.6; color: #bbb; margin-bottom: 15px;">
@@ -660,7 +662,7 @@
                 </div>
 
                 <!-- Card 2: Natural vs Synthetic -->
-                <div class="card" style="background: rgba(20,20,25,0.5); padding: 35px 25px;">
+                <div class="card" style="padding: 35px 25px;">
                     <div style="font-size: 11px; color: var(--gold); letter-spacing: 2px; margin-bottom: 12px; font-weight: 600;">02 / MARKET INSIGHT</div>
                     <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 26px; margin-bottom: 15px; color: #fff;">Natural vs. Synthetic</h3>
                     <p style="font-size: 14px; line-height: 1.6; color: #bbb; margin-bottom: 15px;">
@@ -672,7 +674,7 @@
                 </div>
 
                 <!-- Card 3: Popular Gems -->
-                <div class="card" style="background: rgba(20,20,25,0.5); padding: 35px 25px;">
+                <div class="card" style="padding: 35px 25px;">
                     <div style="font-size: 11px; color: var(--gold); letter-spacing: 2px; margin-bottom: 12px; font-weight: 600;">03 / PORTFOLIO AESTHETICS</div>
                     <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 26px; margin-bottom: 15px; color: #fff;">Popular Varieties</h3>
                     <p style="font-size: 14px; line-height: 1.6; color: #bbb; margin-bottom: 15px;">
@@ -730,7 +732,7 @@
     </section>
 
     <!-- Contact & Form Section -->
-    <section id="contact" style="background: rgba(3, 3, 5, 0.4);">
+    <section id="contact" style="background: rgba(3, 3, 5, 0.2);">
         <div class="container">
             <div class="contact-grid">
                 <div>
@@ -799,11 +801,11 @@
 </div>
 
 <script>
-    // 升级版：钻石切面星芒粒子与鼠标重力场动效
+    // 【深度升级】钻石四角星芒切割与高穿透粒子动画
     const canvas = document.getElementById('particle-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
-    let mouse = { x: null, y: null, radius: 150 };
+    let mouse = { x: null, y: null, radius: 180 };
 
     function resizeCanvas() {
         canvas.width = window.innerWidth;
@@ -816,53 +818,51 @@
         constructor() {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 3 + 1;
+            this.size = Math.random() * 4 + 1.5; // 稍微调大星芒尺寸使之容易观察
             this.baseX = this.x;
             this.baseY = this.y;
-            this.density = (Math.random() * 20) + 5;
-            this.alpha = Math.random() * 0.4 + 0.1;
-            this.blinkSpeed = Math.random() * 0.01 + 0.005;
+            this.alpha = Math.random() * 0.5 + 0.2;
+            this.blinkSpeed = Math.random() * 0.015 + 0.005;
         }
         draw() {
             ctx.save();
             ctx.globalAlpha = this.alpha;
             
-            // 绘制由中心向外发散的钻石十字四角星芒
-            ctx.strokeStyle = '#D4AF37';
-            ctx.lineWidth = 0.5;
+            // 绘制精细的四角钻石十字星芒
+            ctx.strokeStyle = '#E2C266'; 
+            ctx.lineWidth = 0.8;
             ctx.beginPath();
-            ctx.moveTo(this.x - this.size * 2, this.y);
-            ctx.lineTo(this.x + this.size * 2, this.y);
-            ctx.moveTo(this.x, this.y - this.size * 2);
-            ctx.lineTo(this.x, this.y + this.size * 2);
+            ctx.moveTo(this.x - this.size * 2.5, this.y);
+            ctx.lineTo(this.x + this.size * 2.5, this.y);
+            ctx.moveTo(this.x, this.y - this.size * 2.5);
+            ctx.lineTo(this.x, this.y + this.size * 2.5);
             ctx.stroke();
 
-            // 中心核心亮点
+            // 钻石中心核心高亮点
             ctx.fillStyle = '#FFFFFF';
             ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size * 0.4, 0, Math.PI * 2);
+            ctx.arc(this.x, this.y, this.size * 0.5, 0, Math.PI * 2);
             ctx.fill();
             
             ctx.restore();
         }
         update() {
-            // 呼吸闪烁效应
+            // 呼吸闪烁
             this.alpha += this.blinkSpeed;
-            if (this.alpha > 0.6 || this.alpha < 0.1) {
+            if (this.alpha > 0.8 || this.alpha < 0.2) {
                 this.blinkSpeed = -this.blinkSpeed;
             }
 
-            // 鼠标磁力互动（向鼠标方向轻微靠拢，类似引力透镜）
+            // 鼠标交互运动
             let dx = mouse.x - this.x;
             let dy = mouse.y - this.y;
             let distance = Math.hypot(dx, dy);
             
             if (distance < mouse.radius) {
                 let force = (mouse.radius - distance) / mouse.radius;
-                this.x += (dx / distance) * force * 1.5;
-                this.y += (dy / distance) * force * 1.5;
+                this.x += (dx / distance) * force * 2;
+                this.y += (dy / distance) * force * 2;
             } else {
-                // 缓慢回归原位
                 if (this.x !== this.baseX) {
                     let dxBase = this.baseX - this.x;
                     this.x += dxBase * 0.05;
@@ -877,8 +877,7 @@
 
     function initParticles() {
         particles = [];
-        // 控制屏幕粒子总数，避免过密
-        const count = Math.min(100, Math.floor((canvas.width * canvas.height) / 15000));
+        const count = Math.min(80, Math.floor((canvas.width * canvas.height) / 18000));
         for (let i = 0; i < count; i++) {
             particles.push(new GemSparkle());
         }
@@ -903,7 +902,7 @@
         mouse.y = null;
     });
 
-    // 原有保持原样的基础资产数据
+    // 维持资产数据原封不动
     const gemstonesData = [
         { name: "Natural Ruby", size: "0.7-5.0mm", desc: "Vivid red, excellent saturation", category: "red", img: "ruby.jpg" },
         { name: "Blue Sapphire", size: "0.7-5.0mm", desc: "Cornflower to royal blue", category: "blue", img: "sapphire.PNG" },

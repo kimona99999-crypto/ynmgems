@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>YNM GEMS | Wholesale Natural Gemstones B2B - Precision Cut 0.7-5.0mm</title>
+    
+    <!-- 【解决 image_03bdc6.png 中的问题】在这里引入你的网站标签页图标 Logo -->
+    <link rel="icon" href="logo.PNG" type="image/png">
+    
     <meta name="description" content="YNM GEMS – premium B2B supplier of natural gemstones from Wuzhou, China. Precision-cut round stones 0.7-5.0mm. Wholesale, OEM, custom sampling, global shipping. Trusted by Thailand, India, China markets.">
     <meta name="keywords" content="natural gemstones wholesale, round cut gemstones, precision cut, ruby, sapphire, tsavorite, B2B gemstone supplier, Wuzhou gems, YNM GEMS">
     <meta name="author" content="YNM GEMS">
@@ -16,13 +20,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* 【优化：全局丝滑滚动】 */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px; /* 防止点击导航跳转时内容被固定的 header 挡住 */
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        /* 【全新改版：钛金丝绒流光背景】彻底告别死黑，用深邃的星空暗紫与钛金黑交织，产生高级天鹅绒质感 */
         body {
             background: radial-gradient(circle at 50% 30%, #110e1c 0%, #08070d 50%, #030305 100%) !important;
             color: #E6E6E6;
@@ -33,11 +42,10 @@
             --gold: #D4AF37;
             --gold-light: #F2D880;
             --gold-dark: #9E7B1F;
-            --bg-card: rgba(18, 16, 24, 0.75); /* 配合新背景微调卡片色调 */
+            --bg-card: rgba(18, 16, 24, 0.75);
             --border-glow: 0 0 15px rgba(212, 175, 55, 0.15);
         }
         
-        /* 【特效强效穿透与滤色】 */
         #particle-canvas {
             position: fixed;
             top: 0;
@@ -46,7 +54,7 @@
             height: 100%;
             pointer-events: none;
             z-index: 999; 
-            mix-blend-mode: screen; /* 开启滤色模式，让光芒完美叠加在网页上 */
+            mix-blend-mode: screen;
         }
         
         .container {
@@ -98,14 +106,17 @@
             transition: 0.3s;
         }
         .nav-links a:hover { color: var(--gold); text-shadow: 0 0 5px var(--gold);}
+        
+        /* 移动端菜单按钮样式 */
         .menu-toggle {
             display: none;
-            font-size: 28px;
+            font-size: 24px;
             cursor: pointer;
             color: var(--gold);
+            padding: 5px;
+            transition: 0.3s;
         }
         
-        /* Hero 区域背景环境光微调 */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -500,26 +511,43 @@
             color: #fff;
             text-decoration: underline;
         }
+
+        /* 【优化：移动端高级响应式与防漏底设计】 */
         @media (max-width: 992px) {
-            .menu-toggle { display: block; }
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: #0c0a12;
-                flex-direction: column;
-                text-align: center;
-                padding: 30px;
-                gap: 20px;
-                border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            .menu-toggle { 
+                display: block; 
             }
-            .nav-links.active { display: flex; }
-            .hero h1 { font-size: 48px; }
+            .nav-links {
+                display: flex;
+                position: fixed;
+                top: 0;
+                right: -100%; /* 侧滑隐藏动画 */
+                width: 75%;
+                height: 100vh;
+                background: rgba(12, 10, 18, 0.98);
+                backdrop-filter: blur(25px);
+                -webkit-backdrop-filter: blur(25px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 40px;
+                gap: 30px;
+                border-left: 1px solid rgba(212, 175, 55, 0.15);
+                transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                box-shadow: -10px 0 40px rgba(0,0,0,0.8);
+            }
+            .nav-links.active { 
+                right: 0; 
+            }
+            .nav-links a {
+                font-size: 18px;
+            }
+            .hero h1 { font-size: 44px; }
             .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
             .contact-grid { grid-template-columns: 1fr; }
             .container { padding: 0 24px; }
+            header { padding: 15px 24px; }
+            header.scrolled { padding: 12px 24px; }
         }
     </style>
 </head>
@@ -531,7 +559,8 @@
 <header id="header">
     <div class="header-inner">
         <div class="logo"><img src="logo.PNG" alt="YNM GEMS"></div>
-        <div class="menu-toggle" id="menuToggle"><i class="fas fa-gem"></i></div>
+        <!-- 移动端汉堡菜单图标 -->
+        <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
         <ul class="nav-links" id="navLinks">
             <li><a href="#home">HOME</a></li>
             <li><a href="#about">ABOUT US</a></li>
@@ -817,17 +846,16 @@
         constructor() {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 4 + 2; // 强化尺寸基数
+            this.size = Math.random() * 4 + 2; 
             this.baseX = this.x;
             this.baseY = this.y;
-            this.alpha = Math.random() * 0.6 + 0.3; // 提升基础透明度
+            this.alpha = Math.random() * 0.6 + 0.3; 
             this.blinkSpeed = Math.random() * 0.02 + 0.008;
         }
         draw() {
             ctx.save();
             ctx.globalAlpha = this.alpha;
             
-            // 采用对比度极高的亮钛金四角十字星芒
             ctx.strokeStyle = '#FFE082'; 
             ctx.lineWidth = 1.2;
             ctx.beginPath();
@@ -837,7 +865,6 @@
             ctx.lineTo(this.x, this.y + this.size * 3);
             ctx.stroke();
 
-            // 中心核心纯白高亮点，保证闪烁穿透力
             ctx.fillStyle = '#FFFFFF';
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size * 0.6, 0, Math.PI * 2);
@@ -851,31 +878,36 @@
                 this.blinkSpeed = -this.blinkSpeed;
             }
 
-            let dx = mouse.x - this.x;
-            let dy = mouse.y - this.y;
-            let distance = Math.hypot(dx, dy);
+            // 【优化：只有非触摸屏才执行鼠标联动，避免手机滑动冲突】
+            if (mouse.x !== null) {
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.hypot(dx, dy);
+                
+                if (distance < mouse.radius) {
+                    let force = (mouse.radius - distance) / mouse.radius;
+                    this.x += (dx / distance) * force * 2.5;
+                    this.y += (dy / distance) * force * 2.5;
+                    return;
+                }
+            }
             
-            if (distance < mouse.radius) {
-                let force = (mouse.radius - distance) / mouse.radius;
-                this.x += (dx / distance) * force * 2.5;
-                this.y += (dy / distance) * force * 2.5;
-            } else {
-                if (this.x !== this.baseX) {
-                    let dxBase = this.baseX - this.x;
-                    this.x += dxBase * 0.05;
-                }
-                if (this.y !== this.baseY) {
-                    let dyBase = this.baseY - this.y;
-                    this.y += dyBase * 0.05;
-                }
+            if (this.x !== this.baseX) {
+                let dxBase = this.baseX - this.x;
+                this.x += dxBase * 0.05;
+            }
+            if (this.y !== this.baseY) {
+                let dyBase = this.baseY - this.y;
+                this.y += dyBase * 0.05;
             }
         }
     }
 
     function initParticles() {
         particles = [];
-        // 适当增加粒子密度，让视觉感更充沛
-        const count = Math.min(110, Math.floor((canvas.width * canvas.height) / 14000));
+        // 如果是手机端，适当减少粒子数，省电不发烫
+        const density = window.innerWidth < 768 ? 25000 : 14000;
+        const count = Math.min(110, Math.floor((canvas.width * canvas.height) / density));
         for (let i = 0; i < count; i++) {
             particles.push(new GemSparkle());
         }
@@ -900,7 +932,7 @@
         mouse.y = null;
     });
 
-    // 维持资产数据原封不动
+    // 宝石列表数据维持原样
     const gemstonesData = [
         { name: "Natural Ruby", size: "0.7-5.0mm", desc: "Vivid red, excellent saturation", category: "red", img: "ruby.jpg" },
         { name: "Blue Sapphire", size: "0.7-5.0mm", desc: "Cornflower to royal blue", category: "blue", img: "sapphire.PNG" },
@@ -945,9 +977,30 @@
         if (window.scrollY > 50) header.classList.add('scrolled');
         else header.classList.remove('scrolled');
     });
-    document.getElementById("menuToggle").addEventListener("click", () => {
-        document.getElementById("navLinks").classList.toggle("active");
+
+    // 【核心交互优化：手机端汉堡菜单更顺畅，且点击后自动关闭】
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        // 动态更换图标样式 (三杠 与 关闭叉号 切换)
+        const icon = menuToggle.querySelector("i");
+        if(navLinks.classList.contains("active")) {
+            icon.className = "fas fa-times";
+        } else {
+            icon.className = "fas fa-bars";
+        }
     });
+
+    // 点击菜单内任意链接后，自动缩回菜单（解决移动端死锁问题）
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            menuToggle.querySelector("i").className = "fas fa-bars";
+        });
+    });
+
     document.getElementById("inquiryForm").addEventListener("submit", (e) => {
         e.preventDefault();
         alert("Thank you! YNM GEMS team will reply within 24 hours.");

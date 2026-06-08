@@ -19,7 +19,6 @@
         * {
             margin: 0;
             padding: 0;
-            
             box-sizing: border-box;
         }
         body {
@@ -188,6 +187,53 @@
         .grid-4 { grid-template-columns: repeat(4,1fr); }
         .grid-3 { grid-template-columns: repeat(3,1fr); }
         .grid-2 { grid-template-columns: repeat(2,1fr); }
+        
+        /* About & Education Style Extensions */
+        .prose-block {
+            background: var(--bg-card);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 28px;
+            padding: 40px;
+            backdrop-filter: blur(8px);
+        }
+        .prose-block p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+        .prose-block p:last-child {
+            margin-bottom: 0;
+        }
+        .edu-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            color: var(--gold);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--gold);
+            padding-left: 15px;
+        }
+        .edu-box h3:first-child {
+            margin-top: 0;
+        }
+        .application-banner {
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), radial-gradient(circle at 50% 50%, #1a1508, #010101);
+            border-top: 1px solid rgba(212,175,55,0.2);
+            border-bottom: 1px solid rgba(212,175,55,0.2);
+            text-align: center;
+            padding: 60px 20px;
+            margin: 40px 0;
+        }
+        .application-banner p {
+            font-size: 18px;
+            color: #fff;
+            letter-spacing: 0.5px;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
         .card {
             background: var(--bg-card);
             backdrop-filter: blur(8px);
@@ -375,6 +421,27 @@
             padding: 60px 0 30px;
             border-top: 1px solid rgba(212,175,55,0.2);
         }
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        .org-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--gold);
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        .org-links a:hover {
+            text-decoration: underline;
+        }
         @media (max-width: 992px) {
             .menu-toggle { display: block; }
             .nav-links {
@@ -407,9 +474,10 @@
         <div class="menu-toggle" id="menuToggle"><i class="fas fa-gem"></i></div>
         <ul class="nav-links" id="navLinks">
             <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT US</a></li>
             <li><a href="#products">PRODUCTS</a></li>
             <li><a href="#cooperation">PARTNERSHIP</a></li>
-            <li><a href="#service">SERVICES</a></li>
+            <li><a href="#education">GEM EDUCATION</a></li>
             <li><a href="#news">NEWS</a></li>
             <li><a href="#contact">CONTACT</a></li>
         </ul>
@@ -417,6 +485,7 @@
 </header>
 
 <main>
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-badge">WUZHOU · SINCE 2009 · FACTORY DIRECT</div>
@@ -429,8 +498,9 @@
         </div>
     </section>
 
+    <!-- Quick Stats -->
     <div class="container">
-        <div class="grid-4" style="margin: 60px 0;">
+        <div class="grid-4" style="margin: 20px 0 60px 0;">
             <div class="card"><i class="fas fa-gem card-icon"></i><h3>15+ Years</h3><p>Master Supply Chain</p></div>
             <div class="card"><i class="fas fa-city card-icon"></i><h3>Wuzhou Hub</h3><p>Global Gemstone Capital</p></div>
             <div class="card"><i class="fas fa-building card-icon"></i><h3>Factory Direct</h3><p>No Middleman</p></div>
@@ -438,6 +508,39 @@
         </div>
     </div>
 
+    <!-- About Us Section -->
+    <section id="about" style="background: #0d0d12;">
+        <div class="container">
+            <h2 class="section-title">About YNM GEMS</h2>
+            <div class="section-sub">Professional natural gemstone manufacturer & wholesale supplier</div>
+            <div class="prose-block">
+                <p>
+                    YNM GEMS is a professional natural gemstone manufacturer and wholesale supplier located in Wuzhou, Guangxi, China, one of the world's largest gemstone cutting and trading centers.
+                </p>
+                <p>
+                    With more than 15 years of experience in the gemstone industry, we specialize in precision-cut calibrated round gemstones ranging from 0.7mm to 5.0mm. Our products are widely used by jewelry manufacturers, jewelry brands, gemstone wholesalers, retailers and designers worldwide.
+                </p>
+                <p>
+                    Our main gemstone varieties include Tsavorite, Ruby, Blue Sapphire, Pink Sapphire, White Sapphire, White Topaz, Garnet, Peridot, Amethyst, Citrine, Smoky Quartz, Tourmaline and Chrome Diopside.
+                </p>
+                <p>
+                    We provide wholesale gemstone supply, OEM gemstone solutions, custom gemstone cutting services, mixed parcel sourcing and worldwide shipping support. Every gemstone is carefully inspected to ensure excellent brilliance, consistent size and reliable quality.
+                </p>
+                <p>
+                    Today, YNM GEMS serves customers across North America, Europe, Southeast Asia, the Middle East and other international markets, helping jewelry businesses source premium natural gemstones directly from China.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Global Banner -->
+    <div class="application-banner">
+        <div class="container">
+            <p><i class="fas fa-globe-americas" style="color: var(--gold); margin-right: 10px;"></i> Our gemstones are widely used in jewelry manufacturing, custom jewelry brands, wholesalers and gemstone retailers worldwide.</p>
+        </div>
+    </div>
+
+    <!-- Atelier Collection Section -->
     <section id="products" style="background: radial-gradient(circle at 50% 0%, #0f0f15, #010101);">
         <div class="container">
             <h2 class="section-title">The Atelier Collection</h2>
@@ -456,16 +559,17 @@
         </div>
     </section>
 
+    <!-- Partnership Models Section -->
     <section id="cooperation">
         <div class="container">
             <h2 class="section-title">Partnership Models</h2>
             <div class="section-sub">Flexible cooperation for all business scales</div>
             <div class="grid-3">
-                <div class="card"><i class="fas fa-boxes card-icon"></i><h3>Wholesale</h3><p>Ready stock 0.7-3.0mm, immediate dispatch, flexible MOQ.</p></div>
+                <div class="card"><i class="fas fa-boxes card-icon"></i><h3>Wholesale Supply</h3><p>Ready stock 0.7-3.0mm, immediate dispatch, flexible MOQ.</p></div>
                 <div class="card"><i class="fas fa-chalkboard-user card-icon"></i><h3>Regional Agency</h3><p>Exclusive pricing and market protection.</p></div>
                 <div class="card"><i class="fas fa-globe card-icon"></i><h3>Global Sourcing</h3><p>Export documentation, custom packaging, full support.</p></div>
-                <div class="card"><i class="fas fa-microchip card-icon"></i><h3>OEM / Custom</h3><p>Size sorting, mixed lots, private label.</p></div>
-                <div class="card"><i class="fas fa-flask card-icon"></i><h3>Sample Orders</h3><p>Low MOQ sample packs for quality validation.</p></div>
+                <div class="card"><i class="fas fa-microchip card-icon"></i><h3>OEM / Custom Cut</h3><p>Size sorting, mixed lots, private label craftsmanship.</p></div>
+                <div class="card"><i class="fas fa-flask card-icon"></i><h3>Sample Orders</h3><p>Low MOQ sample packs for quality and calibration validation.</p></div>
                 <div class="card"><i class="fas fa-handshake card-icon"></i><h3>Annual Contract</h3><p>Stable supply, preferred pricing, long-term partnership.</p></div>
             </div>
             <div style="margin-top: 70px;">
@@ -481,22 +585,52 @@
         </div>
     </section>
 
-    <section id="service" style="background: #050508;">
+    <!-- Gem Education Section -->
+    <section id="education" style="background: #06060a;">
         <div class="container">
-            <h2 class="section-title">Four Core Guarantees</h2>
+            <h2 class="section-title">Gemstone Knowledge & Guides</h2>
+            <div class="section-sub">Explore industry standards, cutting craftsmanship, and buying guides</div>
+            <div class="prose-block edu-box">
+                <h3>What Determines Gemstone Quality?</h3>
+                <p>
+                    The quality of a natural gemstone is generally evaluated according to four important factors: Color, Clarity, Cut and Carat Weight.
+                </p>
+                <p>
+                    Color is often the most important factor influencing gemstone value. Rich saturation, excellent transparency and even color distribution are highly desirable.
+                </p>
+                <p>
+                    Precision cutting directly affects brilliance and light reflection. A well-cut gemstone appears brighter and more attractive in jewelry settings.
+                </p>
+
+                <h3>Natural vs Synthetic Gemstones</h3>
+                <p>
+                    Natural gemstones are formed through geological processes over millions of years. Synthetic gemstones are laboratory-created materials with similar physical properties but different origins and market values.
+                </p>
+
+                <h3>Popular Natural Gemstones</h3>
+                <p>
+                    Ruby is famous for its vivid red color. Sapphire is available in blue, pink and white varieties. Tsavorite offers a vibrant green appearance, while Tourmaline is known for its wide range of colors.
+                </p>
+                <p>
+                    Garnet, Peridot, Amethyst, Citrine and White Topaz are also widely used in fine jewelry manufacturing due to their beauty and affordability.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantees Banner -->
+    <section id="service" style="background: #020203; padding: 60px 0;">
+        <div class="container">
             <div class="service-list">
                 <div class="service-item"><i class="fas fa-check-circle" style="color:var(--gold);"></i> Direct Sourcing</div>
                 <div class="service-item"><i class="fas fa-microscope" style="color:var(--gold);"></i> Triple Quality Sorting</div>
                 <div class="service-item"><i class="fas fa-shipping-fast" style="color:var(--gold);"></i> Global Insured Shipping</div>
                 <div class="service-item"><i class="fas fa-headset" style="color:var(--gold);"></i> 24h After-sales Response</div>
             </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="#contact" class="btn-primary">Request Partnership Policy</a>
-            </div>
         </div>
     </section>
 
-    <!-- 新闻区域 - 真实链接，可跳转 -->
+    <!-- News & Insights Section -->
     <section id="news">
         <div class="container">
             <h2 class="section-title">Insights & News</h2>
@@ -506,19 +640,19 @@
                     <div class="news-date"><i class="far fa-calendar-alt"></i> Mar 15, 2025</div>
                     <h3>2025 Global Gemstone Market Outlook</h3>
                     <p>Round precision-cut stones gaining momentum, 0.7-5.0mm becoming industry standard...</p>
-                    <a href="https://www.gemstone.org/industry-news/2025-market-outlook" target="_blank" style="color:var(--gold);">Read more →</a>
+                    <a href="https://www.gemstone.org/industry-news/2025-market-outlook" target="_blank" style="color:var(--gold); text-decoration: none;">Read more →</a>
                 </div>
                 <div class="news-card">
                     <div class="news-date"><i class="far fa-calendar-alt"></i> Feb 28, 2025</div>
                     <h3>YNM GEMS at Bangkok Gem & Jewelry Fair</h3>
                     <p>Strong engagement with Southeast Asian buyers, expanding global reach...</p>
-                    <a href="https://www.bangkokgemsfair.com/recap-2025" target="_blank" style="color:var(--gold);">Read more →</a>
+                    <a href="https://www.bangkokgemsfair.com/recap-2025" target="_blank" style="color:var(--gold); text-decoration: none;">Read more →</a>
                 </div>
                 <div class="news-card">
                     <div class="news-date"><i class="far fa-calendar-alt"></i> Jan 10, 2025</div>
                     <h3>How to Identify Natural vs. Synthetic Gems</h3>
                     <p>Essential tips for buyers and jewelers...</p>
-                    <a href="https://www.gia.edu/gem-identification" target="_blank" style="color:var(--gold);">Read more →</a>
+                    <a href="https://www.gia.edu/gem-identification" target="_blank" style="color:var(--gold); text-decoration: none;">Read more →</a>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
@@ -527,16 +661,17 @@
         </div>
     </section>
 
+    <!-- Contact & Form Section -->
     <section id="contact" style="background: #030305;">
         <div class="container">
             <div class="contact-grid">
                 <div>
-                    <h3 style="font-size: 32px;">Get a Quote & Samples</h3>
-                    <p>Our team replies within 24 hours with pricing, specifications, and sample policy.</p>
-                    <p><i class="fas fa-envelope" style="color:var(--gold);"></i> kimona99999@gmail.com</p>
-                    <p><i class="fab fa-whatsapp" style="color:var(--gold);"></i> +86-18276412661</p>
-                    <p><i class="fab fa-weixin" style="color:var(--gold);"></i> WeChat: <strong>13878409776</strong></p>
-                    <a href="https://wa.me/8618276412661" class="btn-primary" style="display: inline-block; margin-top: 20px;"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+                    <h3 style="font-size: 32px; margin-bottom: 15px;">Get a Quote & Samples</h3>
+                    <p style="color: #bbb; margin-bottom: 25px;">Our team replies within 24 hours with pricing, specifications, and sample policy.</p>
+                    <p style="margin-bottom: 10px;"><i class="fas fa-envelope" style="color:var(--gold); width: 25px;"></i> kimona99999@gmail.com</p>
+                    <p style="margin-bottom: 10px;"><i class="fab fa-whatsapp" style="color:var(--gold); width: 25px;"></i> +86-18276412661</p>
+                    <p style="margin-bottom: 20px;"><i class="fab fa-weixin" style="color:var(--gold); width: 25px;"></i> WeChat: <strong>13878409776</strong></p>
+                    <a href="https://wa.me/8618276412661" class="btn-primary" style="display: inline-block; text-align: center;"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
                 </div>
                 <div>
                     <form id="inquiryForm">
@@ -563,29 +698,40 @@
 
 <footer>
     <div class="container">
-        <div class="grid-2" style="gap: 40px;">
+        <div class="grid-2" style="gap: 40px; margin-bottom: 30px;">
             <div>
-                <img src="logo.PNG" height="45" alt="YNM GEMS">
-                <p>© 2025 YNM GEMS — Premium Natural Gemstone B2B Supplier<br>Wuzhou, Guangxi, China</p>
-                <p><i class="fab fa-weixin"></i> WeChat: <strong>13878409776</strong></p>
+                <img src="logo.PNG" height="45" alt="YNM GEMS" style="margin-bottom: 15px;">
+                <p style="font-size: 14px; color: #aaa; line-height: 1.6;">© 2026 YNM GEMS — Premium Natural Gemstone B2B Supplier<br>Wuzhou, Guangxi, China</p>
+                <p style="font-size: 14px; color: #aaa; margin-top: 8px;"><i class="fab fa-weixin" style="color: var(--gold);"></i> WeChat: <strong>13878409776</strong></p>
             </div>
-            <div>
-                <h4>Quick Links</h4>
-                <p><a href="#products" style="color:#ccc;">Products</a> | <a href="#cooperation" style="color:#ccc;">Partnership</a> | <a href="#service" style="color:#ccc;">Services</a> | <a href="#news" style="color:#ccc;">News</a></p>
-                <p><i class="fab fa-linkedin"></i> LinkedIn | <i class="fab fa-instagram"></i> Instagram</p>
+            <div class="footer-links">
+                <h4 style="color: var(--gold); margin-bottom: 15px; font-family: 'Cormorant Garamond', serif; font-size: 20px;">Quick Links</h4>
+                <p style="line-height: 2;"><a href="#about">About Us</a> | <a href="#products">Products</a> | <a href="#cooperation">Partnership</a> | <a href="#education">Gem Education</a> | <a href="#news">News</a></p>
+                <p style="margin-top: 10px;"><i class="fab fa-linkedin"></i> LinkedIn | <i class="fab fa-instagram"></i> Instagram</p>
             </div>
         </div>
-        <div class="copyright" style="text-align: center; margin-top: 40px; font-size: 12px;">natural gemstones wholesale, round cut, B2B gemstone trading, OEM custom</div>
+        
+        <!-- Industry Resources Verification Links -->
+        <div style="border-top: 1px solid rgba(212,175,55,0.1); padding-top: 20px; margin-bottom: 20px;" class="org-links">
+            <span style="color:#777; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px;">Industry Resources:</span>
+            <a href="https://www.gia.edu" target="_blank"><i class="fas fa-external-link-alt"></i> GIA Official Website</a>
+            <a href="https://www.gemstone.org" target="_blank"><i class="fas fa-external-link-alt"></i> ICA Official Website</a>
+        </div>
+
+        <div class="copyright" style="text-align: center; font-size: 12px; color: #555; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+            natural gemstones wholesale, round cut, B2B gemstone trading, OEM custom
+        </div>
     </div>
 </footer>
 
+<!-- Floating Action Buttons -->
 <div class="float-buttons" style="position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 12px; z-index: 99;">
-    <a href="https://wa.me/8618276412661" class="float-wa" style="background:#25D366; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);"><i class="fab fa-whatsapp"></i></a>
-    <a href="mailto:kimona99999@gmail.com" class="float-email" style="background: var(--gold); width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: black; font-size: 24px;"><i class="fas fa-envelope"></i></a>
+    <a href="https://wa.me/8618276412661" class="float-wa" style="background:#25D366; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); text-decoration: none;"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:kimona99999@gmail.com" class="float-email" style="background: var(--gold); width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: black; font-size: 24px; text-decoration: none;"><i class="fas fa-envelope"></i></a>
 </div>
 
 <script>
-    // Particle background
+    // Particle background animation
     const canvas = document.getElementById('particle-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
@@ -641,7 +787,7 @@
     animate();
     document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
 
-    // Gemstone Data
+    // Gemstone Data (Unchanged original asset files)
     const gemstonesData = [
         { name: "Natural Ruby", size: "0.7-5.0mm", desc: "Vivid red, excellent saturation", category: "red", img: "ruby.jpg" },
         { name: "Blue Sapphire", size: "0.7-5.0mm", desc: "Cornflower to royal blue", category: "blue", img: "sapphire.PNG" },

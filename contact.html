@@ -3,44 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact & Inquiry | YNM GEMS</title>
+    <title>Contact YNM GEMS Factory | Send Gemstone RFQ & Wholesale Inquiry</title>
+    <meta name="description" content="Contact YNM GEMS export desk directly via WhatsApp, WeChat, or Email. Submit your gemstone specification sheets (RFQ) for bulk calibrated ruby, sapphire, and colored stones direct from our China factory.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: #08070d; color: #E6E6E6; font-family: 'Inter', sans-serif; padding-top: 140px; }
-        :root { --gold: #D4AF37; }
+        :root { --gold: #D4AF37; --gold-light: #F2D880; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-        
         header { position: fixed; top: 0; width: 100%; padding: 18px 40px; background: rgba(8, 7, 12, 0.9); border-bottom: 1px solid rgba(212, 175, 55, 0.15); z-index: 1000; }
         .header-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
         .logo img { height: 48px; }
         .nav-links { display: flex; gap: 32px; list-style: none; }
         .nav-links a { color: #fff; text-decoration: none; font-size: 14px; }
-        .nav-links a:hover { color: var(--gold); }
-
         .contact-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; margin-bottom: 100px; }
-        .contact-info h2 { font-family: 'Cormorant Garamond', serif; font-size: 42px; color: #fff; margin-bottom: 20px; text-align: left; }
+        .contact-info h2 { font-family: 'Cormorant Garamond', serif; font-size: 42px; color: #fff; margin-bottom: 20px; }
         .contact-info h2 span { color: var(--gold); }
         .contact-info p { color: #aaa; margin-bottom: 40px; line-height: 1.6; }
         
-        .info-item { display: flex; gap: 20px; margin-bottom: 30px; align-items: flex-start; }
-        .info-icon { font-size: 24px; color: var(--gold); margin-top: 3px; }
-        .info-text h4 { font-size: 16px; color: #fff; margin-bottom: 5px; }
-        .info-text p { color: #999; font-size: 14px; line-height: 1.4; margin-bottom: 0; }
-
+        /* 核心即时通讯工具样式（WhatsApp / WeChat） */
+        .instant-com-box { display: flex; flex-direction: column; gap: 15px; margin-bottom: 40px; background: rgba(255,255,255,0.02); padding: 25px; border-radius: 20px; border: 1px solid rgba(212,175,55,0.1); }
+        .com-btn { display: flex; align-items: center; gap: 15px; padding: 14px 24px; border-radius: 12px; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; transition: 0.3s; }
+        .btn-whatsapp { background: #25D366; color: #fff; }
+        .btn-whatsapp:hover { background: #20ba5a; transform: translateY(-2px); }
+        .btn-wechat { background: #07C160; color: #fff; }
+        .btn-wechat:hover { background: #06a954; transform: translateY(-2px); }
+        
+        .info-item { display: flex; gap: 20px; margin-bottom: 25px; align-items: flex-start; }
+        .info-icon { font-size: 22px; color: var(--gold); margin-top: 3px; }
+        .info-text h4 { font-size: 15px; color: #fff; margin-bottom: 40px; font-weight: 600; }
+        .info-text p { color: #999; font-size: 14px; line-height: 1.4; }
         .form-box { background: rgba(18, 16, 24, 0.75); border: 1px solid rgba(212,175,55,0.15); padding: 45px; border-radius: 28px; }
         .form-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; margin-bottom: 25px; color: #fff; }
         .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; font-size: 12px; color: var(--gold-light); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
-        input, textarea, select { width: 100%; padding: 15px; background: rgba(255,255,255,0.02); border: 1px solid rgba(212,175,55,0.25); border-radius: 10px; color: #fff; font-family: inherit; font-size: 14px; }
-        input:focus, textarea:focus, select:focus { outline: none; border-color: var(--gold); background: rgba(255,255,255,0.04); }
-        
-        .checkbox-group { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 10px 0 25px; }
-        .checkbox-label { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #ccc; cursor: pointer; }
-        .checkbox-label input { width: auto; margin-bottom: 0; cursor: pointer; }
-
-        .submit-btn { background: var(--gold); color: #000; border: none; padding: 16px; border-radius: 30px; font-weight: 700; width: 100%; cursor: pointer; font-size: 16px; letter-spacing: 0.5px; transition: 0.3s; box-shadow: 0 4px 15px rgba(212,175,55,0.2); }
-        .submit-btn:hover { background: #F2D880; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212,175,55,0.4); }
+        .form-group label { display: block; font-size: 12px; color: var(--gold-light); margin-bottom: 8px; text-transform: uppercase; }
+        input, textarea { width: 100%; padding: 15px; background: rgba(255,255,255,0.02); border: 1px solid rgba(212,175,55,0.25); border-radius: 10px; color: #fff; font-size: 14px; }
+        .submit-btn { background: var(--gold); color: #000; border: none; padding: 16px; border-radius: 30px; font-weight: 700; width: 100%; cursor: pointer; font-size: 16px; transition: 0.3s; }
+        .submit-btn:hover { background: #F2D880; transform: translateY(-2px); }
     </style>
 </head>
 <body>
@@ -61,48 +60,53 @@
 <div class="container">
     <div class="contact-layout">
         <div class="contact-info">
-            <h2>Start Your <span>Inquiry</span></h2>
-            <p>Connect with our Wuzhou factory floor managers directly. We offer professional consultation on sizing grids, bulk custom calibration contracts, and safe high-value logistics insurance options.</p>
+            <h2>Get In Touch <span>Directly</span></h2>
+            <p>Connect immediately with our Wuzhou factory sales directors. For instant pricing models, volume availability sheets, or customized parcel cutting consultation, choose your preferred secure communication tool below.</p>
             
-            <div class="info-item">
-                <i class="fas fa-map-marker-alt info-icon"></i>
-                <div class="info-text"><h4>Factory Headquarters</h4><p>Wuzhou Gemstone Processing District, Guangxi, China</p></div>
+            <div class="instant-com-box">
+                <a href="https://wa.me/8612345678901" target="_blank" class="com-btn btn-whatsapp">
+                    <i class="fab fa-whatsapp" style="font-size: 22px;"></i> Chat on WhatsApp (Fast Response)
+                </a>
+                
+                <div class="com-btn btn-wechat">
+                    <i class="fab fa-weixin" style="font-size: 22px;"></i> WeChat ID: YNMGEMS-Factory
+                </div>
             </div>
+
             <div class="info-item">
                 <i class="fas fa-envelope info-icon"></i>
-                <div class="info-text"><h4>B2B Export Desk</h4><p>office@ynmgems.com (Response within 12 Hours)</p></div>
+                <div class="info-text"><h4>Official B2B Export Desk</h4><p><strong>sales@ynmgems.com</strong><br>Send us your full specification Excel sheets. (Guaranteed feedback within 12 hours)</p></div>
             </div>
             <div class="info-item">
-                <i class="fas fa-truck info-icon"></i>
-                <div class="info-text"><h4>Logistics Support</h4><p>Direct priority delivery channels to Bangkok, Chantaburi, Jaipur, and Mumbai.</p></div>
+                <i class="fas fa-map-marker-alt info-icon"></i>
+                <div class="info-text"><h4>Factory Floor Headquarters</h4><p>YNM Industrial Park, Gemstone Refining & Processing District, Wuzhou City, Guangxi, China.</p></div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-plane info-icon"></i>
+                <div class="info-text"><h4>Insured High-Value Freight</h4><p>Daily secure logistics routing departing directly to Bangkok, Chantaburi, Surat, Jaipur, Mumbai, Hong Kong, and New York.</p></div>
             </div>
         </div>
         
         <div class="form-box">
-            <h3>B2B RFQ Specification Form</h3>
+            <h3>Submit Production RFQ</h3>
             <form>
                 <div class="form-group">
-                    <label>Corporate Identity</label>
-                    <input type="text" placeholder="Company Name & Contact Person" required>
+                    <label>Company Name & Contact Name</label>
+                    <input type="text" placeholder="e.g. Bangkok Luxury Jewelry Co., Ltd / John Doe" required>
                 </div>
                 <div class="form-group">
-                    <label>Business Email</label>
-                    <input type="email" placeholder="name@company.com" required>
+                    <label>Your Business Email</label>
+                    <input type="email" placeholder="buyer@company.com" required>
                 </div>
-                
-                <label style="display: block; font-size: 12px; color: #D4AF37; margin-bottom: 8px; text-transform: uppercase;">Required Gemstones</label>
-                <div class="checkbox-group">
-                    <label class="checkbox-label"><input type="checkbox"> Natural Ruby</label>
-                    <label class="checkbox-label"><input type="checkbox"> Blue Sapphire</label>
-                    <label class="checkbox-label"><input type="checkbox"> Tsavorite</label>
-                    <label class="checkbox-label"><input type="checkbox"> White Topaz</label>
-                </div>
-
                 <div class="form-group">
-                    <label>Millimeter Size Requirement & Message</label>
-                    <textarea rows="4" placeholder="Example: 1.2mm round calibrated Ruby, 50,000 pcs needed..." required></textarea>
+                    <label>Your WhatsApp / Phone (Optional)</label>
+                    <input type="text" placeholder="+66 或 +91 或 +1 开头的带区号电话">
                 </div>
-                <button type="submit" class="submit-btn">Transmit Commercial RFQ</button>
+                <div class="form-group">
+                    <label>Gemstone Sizing & Quantity Requirements</label>
+                    <textarea rows="5" placeholder="Example: Natural Ruby round brilliant cut calibrated 1.2mm (20,000 pcs) and Blue Sapphire 1.5mm (15,000 pcs). Sieve tolerance strictly within ±0.05mm. Delivery destination: Bangkok." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Transmit Commercial RFQ to Factory</button>
             </form>
         </div>
     </div>

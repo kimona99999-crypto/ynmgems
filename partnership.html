@@ -3,20 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partnership | YNM GEMS</title>
+    <title>Partnership Models | YNM GEMS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #08070d; color: #E6E6E6; font-family: 'Inter', sans-serif; padding-top: 120px; }
-        header { position: fixed; top: 0; width: 100%; padding: 18px 40px; background: rgba(8, 7, 12, 0.9); border-bottom: 1px solid rgba(212, 175, 55, 0.15); z-index: 1000; }
+        body { background: #08070d; color: #E6E6E6; font-family: 'Inter', sans-serif; padding-top: 140px; }
+        :root { --gold: #D4AF37; --bg-card: rgba(18, 16, 24, 0.75); }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+        
+        header { position: fixed; top: 0; width: 100%; padding: 18px 40px; background: rgba(8, 7, 12, 0.9); border-bottom: 1px solid rgba(212, 175, 55, 0.15); z-index: 1000; backdrop-filter: blur(15px); }
         .header-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
         .logo img { height: 48px; }
         .nav-links { display: flex; gap: 32px; list-style: none; }
-        .nav-links a { color: #fff; text-decoration: none; }
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; text-align: center; }
-        h2 { font-size: 42px; color: #D4AF37; margin-bottom: 40px; }
-        .box { background: rgba(18, 16, 24, 0.75); border: 1px solid rgba(212, 175, 55, 0.15); padding: 40px; border-radius: 24px; max-width: 800px; margin: 0 auto; line-height: 1.8; text-align: left; }
-        .box h3 { margin-bottom: 15px; color: #fff; }
-        .box p { margin-bottom: 10px; color: #ccc; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 14px; }
+        .nav-links a:hover { color: var(--gold); }
+        
+        h2 { font-family: 'Cormorant Garamond', serif; font-size: 42px; text-align: center; margin-bottom: 10px; color: #fff; }
+        h2 span { color: var(--gold); }
+        .sub { text-align: center; color: #999; margin-bottom: 60px; font-size: 15px; }
+
+        .partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 100px; }
+        .partner-card { background: var(--bg-card); border: 1px solid rgba(212,175,55,0.15); padding: 45px 30px; border-radius: 24px; transition: 0.3s; }
+        .partner-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+        .partner-icon { font-size: 36px; color: var(--gold); margin-bottom: 20px; }
+        .partner-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: #fff; margin-bottom: 15px; }
+        .partner-card p { color: #aaa; font-size: 14px; line-height: 1.6; }
+
+        .workflow-section { background: rgba(13, 11, 20, 0.5); border-top: 1px solid rgba(212,175,55,0.12); padding: 80px 0 100px; }
+        .flow-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 50px; position: relative; }
+        .flow-step { text-align: center; position: relative; }
+        .step-num { width: 50px; height: 50px; border-radius: 50%; background: #181524; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: bold; color: var(--gold-light); font-size: 18px; box-shadow: 0 0 15px rgba(212,175,55,0.2); }
+        .flow-step h4 { font-size: 16px; color: #fff; margin-bottom: 10px; }
+        .flow-step p { font-size: 13px; color: #888; line-height: 1.5; }
     </style>
 </head>
 <body>
@@ -27,7 +46,7 @@
         <ul class="nav-links">
             <li><a href="index.html">HOME</a></li>
             <li><a href="products.html">PRODUCTS</a></li>
-            <li><a href="partnership.html" style="color: #D4AF37;">PARTNERSHIP</a></li>
+            <li><a href="partnership.html" style="color: var(--gold);">PARTNERSHIP</a></li>
             <li><a href="news.html">NEWS</a></li>
             <li><a href="contact.html">CONTACT</a></li>
         </ul>
@@ -35,14 +54,31 @@
 </header>
 
 <div class="container">
-    <h2>Partnership Models</h2>
-    <div class="box">
-        <h3>🤝 Wholesale & OEM Solutions</h3>
-        <p><strong>1. Wholesale Supply:</strong> Ready stock 0.7-3.0mm, immediate dispatch, flexible MOQ.</p>
-        <p><strong>2. OEM / Custom Cut:</strong> Size sorting, mixed lots, private label craftsmanship.</p>
-        <p><strong>3. Sample Orders:</strong> Low MOQ sample packs for quality and calibration validation.</p>
+    <h2>B2B <span>Partnership</span> Models</h2>
+    <div class="sub">Tailored Commercial Logistics For Global Jewellery Manufacturing Houses</div>
+    
+    <div class="partner-grid">
+        <div class="partner-card"><i class="fas fa-cubes partner-icon"></i><h3>1. Wholesale Bulk Supply</h3><p>Access our ready stock of 0.7mm - 3.0mm calibrated round stones. Optimized for distributors demanding immediate dispatch and high volume consistency.</p></div>
+        <div class="partner-card"><i class="fas fa-sliders-h partner-icon"></i><h3>2. OEM Custom Cutting</h3><p>Provide your specific parameter profiles. We manipulate facet counts, girdle thickness variations, and raw parcel selections matching your dynamic blueprints.</p></div>
+        <div class="partner-card"><i class="fas fa-box-open partner-icon"></i><h3>3. Sample Order Packages</h3><p>Low MOQ custom trial parcels curated specifically for scale verification, physical calibration matching, and corporate quality appraisal reviews.</p></div>
+        <div class="partner-card"><i class="fas fa-layer-group partner-icon"></i><h3>4. Calibrated Sieve Sorting</h3><p>Automated and manual mechanical sorting protocols guaranteeing absolute millimeter size precision for automated CNC or watch bezel pave layouts.</p></div>
+        <div class="partner-card"><i class="fas fa-award partner-icon"></i><h3>5. High Jewelry Single Orders</h3><p>Dedicated tracking of unique clean color sets. Custom premium cutting for high-carat signature showpieces demanding intense color vibrancy.</p></div>
+        <div class="partner-card"><i class="fas fa-handshake partner-icon"></i><h3>6. Annual Supply Contracts</h3><p>Secure locked-in wholesale unit rates and dedicated monthly production allocations. Perfect for luxury brands requiring stable supply chain visibility.</p></div>
     </div>
 </div>
+
+<section class="workflow-section">
+    <div class="container">
+        <h2 style="font-size: 36px;">Standard <span>Workflow</span></h2>
+        <div class="flow-grid">
+            <div class="flow-step"><div class="step-num">1</div><h4>Inquiry & Spec</h4><p>Submit size, gemstone type, and exact millimeter variance requirements.</p></div>
+            <div class="flow-step"><div class="step-num">2</div><h4>Quote & Sample</h4><p>Receive specialized B2B pricing model structures and request real-world verification parcels.</p></div>
+            <div class="flow-step"><div class="step-num">3</div><h4>Pro-Forma Invoice</h4><p>Establish crystal clear transparent commercial transaction agreements and shipping timetables.</p></div>
+            <div class="flow-step"><div class="step-num">4</div><h4>Precision Production</h4><p>Wuzhou master facility initiates cutting, strict calibration, and sorting procedures.</p></div>
+            <div class="flow-step"><div class="step-num">5</div><h4>Insured Export</h4><p>Secure premium packaging passing international export borders via secure trackable freight networks.</p></div>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>

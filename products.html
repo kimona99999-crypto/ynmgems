@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | YNM GEMS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #08070d; color: #E6E6E6; font-family: 'Inter', sans-serif; padding-top: 120px; }
+        :root { --gold: #D4AF37; --bg-card: rgba(18, 16, 24, 0.75); }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+        header { position: fixed; top: 0; width: 100%; padding: 18px 40px; background: rgba(8, 7, 12, 0.9); border-bottom: 1px solid rgba(212, 175, 55, 0.15); z-index: 1000; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
+        .logo img { height: 48px; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 14px; }
+        .nav-links a:hover { color: var(--gold); }
+        h2 { font-family: 'Cormorant Garamond', serif; font-size: 42px; text-align: center; margin-bottom: 10px; color: var(--gold); }
+        .sub { text-align: center; color: #999; margin-bottom: 50px; font-size: 14px; }
+        .gem-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 35px; margin-bottom: 80px; }
+        .gem-card { background: var(--bg-card); border-radius: 32px; text-align: center; padding: 35px 24px; border: 1px solid rgba(212, 175, 55, 0.15); transition: 0.3s; }
+        .gem-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .gem-img { width: 160px; height: 160px; margin: 0 auto 24px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(212, 175, 55, 0.3); }
+        .gem-img img { width: 100%; height: 100%; object-fit: cover; }
+        .gem-name { font-size: 22px; font-family: 'Cormorant Garamond', serif; margin-bottom: 6px; color: #fff; }
+        .gem-size { font-size: 12px; color: var(--gold); letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="logo"><a href="index.html"><img src="logo.PNG" alt="YNM GEMS"></a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="products.html" style="color: var(--gold);">PRODUCTS</a></li>
+            <li><a href="partnership.html">PARTNERSHIP</a></li>
+            <li><a href="news.html">NEWS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="container">
+    <h2>The Atelier Collection</h2>
+    <div class="sub">Precision Round Cut 0.7mm - 5.0mm Natural Gemstones</div>
+    
+    <div class="gem-grid">
+        <div class="gem-card">
+            <div class="gem-img"><img src="ruby.jpg" alt="Ruby"></div>
+            <div class="gem-name">Natural Ruby</div>
+            <div class="gem-size">0.7 - 5.0mm</div>
+        </div>
+        <div class="gem-card">
+            <div class="gem-img"><img src="sapphire.jpg" alt="Sapphire"></div>
+            <div class="gem-name">Blue Sapphire</div>
+            <div class="gem-size">0.7 - 5.0mm</div>
+        </div>
+        <div class="gem-card">
+            <div class="gem-img"><img src="pink-sapphire.jpg" alt="Pink Sapphire"></div>
+            <div class="gem-name">Pink Sapphire</div>
+            <div class="gem-size">0.7 - 5.0mm</div>
+        </div>
+        <div class="gem-card">
+            <div class="gem-img"><img src="white-sapphire.jpg" alt="White Sapphire"></div>
+            <div class="gem-name">White Sapphire</div>
+            <div class="gem-size">0.7 - 5.0mm</div>
+        </div>
+        <div class="gem-card">
+            <div class="gem-img"><img src="tsavorite.jpg" alt="Tsavorite"></div>
+            <div class="gem-name">Tsavorite</div>
+            <div class="gem-size">0.7 - 5.0mm</div>
+        </div>
+        <div class="gem-card">
+            <div class="gem-img"><img src="tourmaline.jpg" alt="Tourmaline"></div>
+            <div class="gem-name">Tourmaline</div>
+            <div class="gem-size">0.7 - 5.0mm</div>
+        </div>
+        <div class="gem-card">
+            <div class="gem-img"><img src="amethyst.jpg" alt="Amethyst"></div>
+            <div class="gem-name">Amethyst</div>
+            <div class="gem-size">0.7 - 5.0mm</div>
+        </div>
+        <div class="gem-card">
+            <div class="gem-img"><img src="citrine.jpg" alt="Citrine"></div>
+            <div class="gem-name">Citrine</div>
+            <div class="gem-size">0.7 - 5.0mm</div>
+        </div>
+        <div class="gem-card">
+            <div class="gem-img"><img src="garnet.jpg" alt="Garnet"></div>
+            <div class="gem-name">Garnet</div>
+            <div class="gem-size">0.7 - 5.0mm</div>
+        </div>
+        <div class="gem-card">
+            <div class="gem-img"><img src="peridot.jpg" alt="Peridot"></div>
+            <div class="gem-name">Peridot</div>
+            <div class="gem-size">0.7 - 5.0mm</div>
+        </div>
+        <div class="gem-card">
+            <div class="gem-img"><img src="white-topaz.jpg" alt="White Topaz"></div>
+            <div class="gem-name">White Topaz</div>
+            <div class="gem-size">0.7 - 5.0mm</div>
+        </div>
+        <div class="gem-card">
+            <div class="gem-img"><img src="smoky-quartz.jpg" alt="Smoky Quartz"></div>
+            <div class="gem-name">Smoky Quartz</div>
+            <div class="gem-size">0.7 - 5.0mm</div>
+        </div>
+        <div class="gem-card">
+            <div class="gem-img"><img src="diopside.jpg" alt="Chrome Diopside"></div>
+            <div class="gem-name">Chrome Diopside</div>
+            <div class="gem-size">0.7 - 5.0mm</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

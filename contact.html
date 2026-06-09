@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | YNM GEMS</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #08070d; color: #E6E6E6; font-family: 'Inter', sans-serif; padding-top: 120px; }
+        header { position: fixed; top: 0; width: 100%; padding: 18px 40px; background: rgba(8, 7, 12, 0.9); border-bottom: 1px solid rgba(212, 175, 55, 0.15); z-index: 1000; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
+        .logo img { height: 48px; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: #fff; text-decoration: none; }
+        .container { max-width: 600px; margin: 0 auto; padding: 0 20px; }
+        h2 { font-size: 42px; color: #D4AF37; text-align: center; margin-bottom: 40px; }
+        input, textarea { width: 100%; padding: 15px; margin-bottom: 18px; background: rgba(255,255,255,0.02); border: 1px solid rgba(212,175,55,0.25); border-radius: 10px; color: #fff; }
+        .submit-btn { background: #D4AF37; border: none; padding: 15px; border-radius: 30px; font-weight: bold; width: 100%; cursor: pointer; color: #000; font-size: 16px; }
+        .submit-btn:hover { background: #F2D880; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="logo"><a href="index.html"><img src="logo.PNG" alt="YNM GEMS"></a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="products.html">PRODUCTS</a></li>
+            <li><a href="partnership.html">PARTNERSHIP</a></li>
+            <li><a href="news.html">NEWS</a></li>
+            <li><a href="contact.html" style="color: #D4AF37;">CONTACT</a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="container">
+    <h2>Inquiry Form</h2>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Tell us your gemstone requirements (Size, Quantity...)" required></textarea>
+        <button type="submit" class="submit-btn">Send Inquiry</button>
+    </form>
+</div>
+
+</body>
+</html>
